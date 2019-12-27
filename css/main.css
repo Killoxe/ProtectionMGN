@@ -138,18 +138,57 @@ header .contacts img {
 }
 .slider__wrap {
   grid-area: st;
-  height: 100px;
+  height: 800px;
   background-color: #0c1824;
 }
 .catalog {
-  grid-template-areas: ". sth1 sth1 sth1 ." ". sth2 sth2 sth2 ." "stc stc stc stc stc" /*". sth2 sth2 sth2 ."*/ "stc stc stc stc stc";
+  grid-template-areas: ". sth1 sth1 sth1 ." ". sth2 sth2 sth2 ." "stc1 stc1 stc1 stc1 stc1" ". sth3 sth3 sth3 ." "stc2 stc2 stc2 stc2 stc2";
 }
 .catalog .h1 {
   grid-area: sth1;
 }
-.catalog .h2 {
+.catalog .h2--first {
   grid-area: sth2;
 }
-.catalog__cards {
-  grid-area: stc;
+.catalog .h2--last {
+  grid-area: sth3;
+}
+.catalog__cards--first {
+  grid-area: stc1;
+}
+.catalog__cards--first.tb5in5 {
+  grid-gap: 10px;
+}
+.catalog__cards--last {
+  grid-area: stc2;
+}
+.catalog__cards--last.tb5in5 {
+  grid-gap: 10px;
+}
+.catalog__card {
+  color: white;
+  position: relative;
+  padding: 30px;
+}
+.catalog__card a {
+  color: white !important;
+}
+.catalog__card a:after {
+  background: white;
+}
+.catalog__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 80, 158, 0.5);
+}
+.catalog__card.car img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
