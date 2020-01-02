@@ -6,189 +6,355 @@
 
 @full: "max-width: 1000px";
 
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Comfortaa', cursive !important;
+@font-face {
+	font-family: "Comfortaa";
+	src: url(../font/Comfortaa-VariableFont_wght.ttf);
 }
-html {
-    font-family: 'Comfortaa', cursive !important;
-    color: @textC !important;
-    font-size: 14px !important;
-    line-height: 16px !important;
-    font-weight: normal !important;
+@font-face {
+	font-family: "Oswald";
+	src: url(../font/Oswald-VariableFont_wght.ttf);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Comfortaa', cursive !important;
+}
+body {
+	font-family: 'Comfortaa', cursive !important;
+	color: @textC !important;
+	font-size: 14px !important;
+	// line-height: 16px !important;
+	font-weight: normal !important;
 }
 h1,
 .h1 {
-    font-family: 'Oswald', sans-serif !important;
-    font-size: 48px !important;
-    font-weight: 700 !important;
-    line-height: 65px !important;
-    position: relative;
-    padding-top: 15px;
+	font-family: 'Oswald', sans-serif !important;
+	font-size: 48px !important;
+	font-weight: 700 !important;
+	line-height: 65px !important;
+	position: relative;
+	padding-top: 15px;
+	text-transform: uppercase;
 
-    &::after {
-        content: '';
-        position: absolute;
-        width: 100px;
-        height: 15px;
-        left: 0;
-        top: 0;
-        background-color: @yellow;
-    }
+	&::after {
+		content: '';
+		position: absolute;
+		width: 100px;
+		height: 15px;
+		left: 0;
+		top: 0;
+		background-color: @yellow;
+	}
 }
 h2,
 .h2 {
-    font-weight: 300 !important;
-    font-size: 36px !important;
-    line-height: 40px !important;
+	font-weight: 300 !important;
+	font-size: 36px !important;
+	line-height: 40px !important;
 }
 h3 {
-    font-weight: 300 !important;
-    font-size: 24px !important;
-    line-height: 27px !important;
+	font-weight: 300 !important;
+	font-size: 24px !important;
+	line-height: 27px !important;
 }
 h4 {
-    font-weight: bold !important;
-    font-size: 18px !important;
-    line-height: 20px !important;
+	font-weight: bold !important;
+	font-size: 18px !important;
+	line-height: 20px !important;
 }
 a {
-    color: @textC !important;
-    display: inline-block !important;
-    text-decoration: none !important;
+	color: @textC !important;
+	display: inline-block !important;
+	text-decoration: none !important;
 
-    &:after {
-        content: '';
-        position: relative;
-        top: -3px;
-        width: 100%;
-        height: 1px;
-        display: block;
-        background: @textC;
-        transition: 300ms;
-    }
+	&:after {
+		content: '';
+		position: relative;
+		top: -3px;
+		width: 100%;
+		height: 1px;
+		display: block;
+		background: @textC;
+		transition: 300ms;
+	}
 
-    &:hover:after {
-        width: 0;
-    }
-    &.null::after  {
-        content: none;
-    }
+	&:hover:after {
+		width: 0;
+	}
+	&.null::after  {
+		content: none;
+	}
 }
 
 .btn {
-    position: relative;
-    border: 1px solid @yellow;
-    padding: 11px 30px 9px;
-    width: fit-content;
-    cursor: pointer;
+	position: relative;
+	border: 1px solid @yellow;
+	padding: 11px 30px 9px;
+	width: fit-content;
+	cursor: pointer;
 
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: @yellow;
-        transition: 300ms;
-        z-index: -1;
-    }
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: @yellow;
+		transition: 300ms;
+		z-index: -1;
+	}
 
-    &:hover {
+	&:hover {
 
-        &::after {
-            width: 0;
-        }
-    }
-    span {
-        text-transform: uppercase;
-    }
+		&::after {
+			width: 0;
+		}
+	}
+	span {
+		text-transform: uppercase;
+	}
 }
 
-header {
+.header {
+	position: sticky;
+	z-index: 5;
+	top: 0;
 
-    .row {
-        height: 100px;
-        border-bottom: 2px solid @textC;
-        align-content: center;
-        justify-content: space-between;
+	.row {
+		height: 100px;
+		border-bottom: 2px solid @textC;
+		align-content: center;
+		justify-content: space-between;
 
-        > div {
-            display: flex;
-            align-items: center;
-        }
-    }
-    menu {
-        display: inline-block;
-        margin-left: 30px;
+		> div {
+			display: flex;
+			align-items: center;
+		}
+	}
+	menu {
+		display: inline-block;
+		margin-left: 30px;
 
-        a {
-            margin-right: 15px;
-            transition: 300ms;
-            font-size: 18px;
-            
-            &:hover {
-                color: @blue !important;
-            }
-        }
-    }
-    .contacts {
-        font-size: 18px;
-        
-        img {
-            margin-right: 5px;
-            margin-left: 18px;
-        }
-    }
+		a {
+			margin-right: 15px;
+			transition: 300ms;
+			font-size: 18px;
+			
+			&:hover {
+				color: @blue !important;
+			}
+		}
+	}
+	.contacts {
+		font-size: 18px;
+		
+		img {
+			margin-right: 5px;
+			margin-left: 18px;
+		}
+	}
+}
+.sticky {
+	background-color: @yellow;
 }
 
 .container {
-    max-width: none !important;
-    padding: 0 115px !important;
+	max-width: 1920px !important;
+	padding: 0 115px !important;
 }
 
 .row:not(:last-child) {
-    border-bottom: 2px solid @textC;
+	border-bottom: 2px solid @textC;
 }
-
 
 .tb3in5 {
-    display: grid !important;
-    grid-template-areas: ". st st st .";
-    grid-template-columns: repeat(5, 1fr);
+	display: grid !important;
+	grid-template-areas: ". st st st .";
+	grid-template-columns: repeat(5, 1fr);
 }
 .tb5in5 {
-    display: grid !important;
-    grid-template-areas: "st st st st st";
-    grid-template-columns: repeat(5, 1fr);
+	display: grid !important;
+	grid-template-areas: "st st st st st";
+	grid-template-columns: repeat(5, 1fr);
 }
 
 .slider {
 
-    &__wrap {
-        grid-area: st;
-        height: 100px;
-        background-color: @textC;
-    }
+	&__wrap {
+		grid-area: st;
+		height: 800px;
+		background-color: @textC;
+		margin: 20px 0 25px 0;
+	}
 }
 .catalog {
-    grid-template-areas: 
-    ". sth1 sth1 sth1 ."
-    ". sth2 sth2 sth2 ."
-    "stc stc stc stc stc"
-    ". sth2 sth2 sth2 ."
-    "stc stc stc stc stc";
+	grid-template-areas: 
+	". sth1 sth1 sth1 ."
+	". sth2 sth2 sth2 ."
+	"stc1 stc1 stc1 stc1 stc1"
+	". sth3 sth3 sth3 ."
+	"stc2 stc2 stc2 stc2 stc2";
 
-    .h1 {
-        grid-area: sth1;
-    }
-    .h2 {
-        grid-area: sth2;
-    }
-    &__cards {
-        grid-area: stc;
-    }
+	.h1 {
+		grid-area: sth1;
+		margin: 90px 0 0 50px;
+	}
+	.h2 {
+		margin: 50px 0 0 50px;
+
+		&--first {
+			grid-area: sth2;
+		}
+		&--last {
+			grid-area: sth3;
+			margin-top: 90px;
+		}
+	}
+	&__cards {
+		margin-top: 20px;
+
+		&--first {
+	  grid-area: stc1;
+
+			&.tb5in5 {
+				grid-gap: 10px;
+			}
+		}
+		&--last {
+			grid-area: stc2;
+			margin-bottom: 90px;
+
+			&.tb5in5 {
+				grid-gap: 10px;
+			}
+		}
+	}
+	&__card {
+	color: white;
+	position: relative;
+	transition: all 300ms;
+	width: 100%;
+
+		&:hover {
+
+			span {
+				opacity: 1;
+			}
+		}
+		img {
+			width: 100%;
+			height: 100%;
+		}
+		> div {
+			position: absolute;
+			background-color: rgba(0, 80, 158, 0.5);
+			top: 0;
+			width: 100%;
+			height: 100%;
+			padding: 30px;
+			transition: all 300ms;
+
+			&:hover {
+				background-color: rgba(12, 24, 36, 0.6);
+			}
+		}
+		h3 {
+			margin-bottom: 15px;
+		}
+		span {
+			opacity: 0;
+		}
+		a {
+			position: absolute;
+			right: 30px;
+			bottom: 30px;
+			color: white !important;
+			font-size: 18px;
+
+			&:after {
+				background: white;
+			}
+		}
+	}
+}
+.map {
+	grid-template-areas: 
+	". h1 h1 h1 ."
+	". mp mp mp .";
+
+	.h1 {
+		margin: 90px 0 0 50px;
+		grid-area: h1;
+	}
+	&__wrap {
+		grid-area: mp;
+		margin: 20px 0;
+		color: white;
+	}
+	&__contacts {
+		display:inline-block;
+		width: 429px;
+		height: 559px;
+		background-color: @textC;
+	}
+}
+.contacts {
+
+	&__wrap {
+		margin: 30px 30px 30px 50px;
+		overflow: auto;
+	}
+	&__card {
+
+		&:not(:last-child) {
+			border-bottom: 2px solid @ligtYellow;
+		}
+		h3 {
+			margin-bottom: 12px;
+			font-weight: 100;
+		}
+		h4 {
+			font-weight: 700;
+			margin-bottom: 15px;
+		}
+		a {
+			color: white !important;
+			float: right;
+			margin-bottom: 15px;
+
+			&:after {
+				background: white;
+			}
+		}
+	}
+	&__date {
+		display: inline-grid;
+		grid-template-areas: ". .";
+		width: 50%;
+
+		span:first-child {
+			text-align: right;
+			margin-right: 5px;
+		}
+	}
+	&__phone {
+		display: inline-grid;
+		grid-template-areas: ". .";
+		width: 50%;
+		float: right;
+
+		span:first-child {
+			text-align: right;
+			margin-right: 5px;
+		}
+	}
+	&__info {
+		margin-bottom: 15px;
+	}
+}
+.aboutUs {
+
 }
 // lessc main.less main.css
