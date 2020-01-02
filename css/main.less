@@ -20,11 +20,11 @@
 	padding: 0;
 	font-family: 'Comfortaa', cursive !important;
 }
-html {
+body {
 	font-family: 'Comfortaa', cursive !important;
 	color: @textC !important;
 	font-size: 14px !important;
-	line-height: 16px !important;
+	// line-height: 16px !important;
 	font-weight: normal !important;
 }
 h1,
@@ -35,6 +35,7 @@ h1,
 	line-height: 65px !important;
 	position: relative;
 	padding-top: 15px;
+	text-transform: uppercase;
 
 	&::after {
 		content: '';
@@ -208,6 +209,7 @@ a {
 		}
 		&--last {
 			grid-area: sth3;
+			margin-top: 90px;
 		}
 	}
 	&__cards {
@@ -269,6 +271,7 @@ a {
 			right: 30px;
 			bottom: 30px;
 			color: white !important;
+			font-size: 18px;
 
 			&:after {
 				background: white;
@@ -288,11 +291,67 @@ a {
 	&__wrap {
 		grid-area: mp;
 		margin: 20px 0;
+		color: white;
 	}
 	&__contacts {
+		display:inline-block;
 		width: 429px;
 		height: 559px;
 		background-color: @textC;
+	}
+}
+.contacts {
+
+	&__wrap {
+		margin: 30px 30px 30px 50px;
+		overflow: auto;
+	}
+	&__card {
+
+		&:not(:last-child) {
+			border-bottom: 2px solid @ligtYellow;
+		}
+		h3 {
+			margin-bottom: 12px;
+			font-weight: 100;
+		}
+		h4 {
+			font-weight: 700;
+			margin-bottom: 15px;
+		}
+		a {
+			color: white !important;
+			float: right;
+			margin-bottom: 15px;
+
+			&:after {
+				background: white;
+			}
+		}
+	}
+	&__date {
+		display: inline-grid;
+		grid-template-areas: ". .";
+		width: 50%;
+
+		span:first-child {
+			text-align: right;
+			margin-right: 5px;
+		}
+	}
+	&__phone {
+		display: inline-grid;
+		grid-template-areas: ". .";
+		width: 50%;
+		float: right;
+
+		span:first-child {
+			text-align: right;
+			margin-right: 5px;
+		}
+	}
+	&__info {
+		margin-bottom: 15px;
 	}
 }
 .aboutUs {

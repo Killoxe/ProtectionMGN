@@ -11,11 +11,10 @@
   padding: 0;
   font-family: 'Comfortaa', cursive !important;
 }
-html {
+body {
   font-family: 'Comfortaa', cursive !important;
   color: #0c1824 !important;
   font-size: 14px !important;
-  line-height: 16px !important;
   font-weight: normal !important;
 }
 h1,
@@ -26,6 +25,7 @@ h1,
   line-height: 65px !important;
   position: relative;
   padding-top: 15px;
+  text-transform: uppercase;
 }
 h1::after,
 .h1::after {
@@ -173,6 +173,7 @@ a.null::after {
 }
 .catalog .h2--last {
   grid-area: sth3;
+  margin-top: 90px;
 }
 .catalog__cards {
   margin-top: 20px;
@@ -226,6 +227,7 @@ a.null::after {
   right: 30px;
   bottom: 30px;
   color: white !important;
+  font-size: 18px;
 }
 .catalog__card a:after {
   background: white;
@@ -240,9 +242,56 @@ a.null::after {
 .map__wrap {
   grid-area: mp;
   margin: 20px 0;
+  color: white;
 }
 .map__contacts {
+  display: inline-block;
   width: 429px;
   height: 559px;
   background-color: #0c1824;
+}
+.contacts__wrap {
+  margin: 30px 30px 30px 50px;
+  overflow: auto;
+}
+.contacts__card:not(:last-child) {
+  border-bottom: 2px solid #ffb58f;
+}
+.contacts__card h3 {
+  margin-bottom: 12px;
+  font-weight: 100;
+}
+.contacts__card h4 {
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.contacts__card a {
+  color: white !important;
+  float: right;
+  margin-bottom: 15px;
+}
+.contacts__card a:after {
+  background: white;
+}
+.contacts__date {
+  display: inline-grid;
+  grid-template-areas: ". .";
+  width: 50%;
+}
+.contacts__date span:first-child {
+  text-align: right;
+  margin-right: 5px;
+}
+.contacts__phone {
+  display: inline-grid;
+  grid-template-areas: ". .";
+  width: 50%;
+  float: right;
+}
+.contacts__phone span:first-child {
+  text-align: right;
+  margin-right: 5px;
+}
+.contacts__info {
+  margin-bottom: 15px;
 }
