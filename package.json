@@ -1,0 +1,27 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "browserslist": [
+    "ie >= 8",
+    "last 1 version",
+    "> 1%"
+  ],
+  "dependencies": {
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-rigger": "latest",
+    "gulp-sass": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-uglify": "latest",
+    "gulp-watch": "latest",
+    "del": "latest",
+    "gulp-rename": "latest",
+    "require-dir": "latest",
+    "gulp-if": "latest",
+    "minimist": "latest",
+    "npm": "latest"
+  }
+}

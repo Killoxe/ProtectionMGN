@@ -1,0 +1,18 @@
+.calculateosagoform-people-list-edit {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    .list-edit__item--template {
+        display: none;
+    }
+
+    .list-edit__item {
+        & > .list-edit__item-label {
+            padding-bottom: 10px;
+        }
+
+        margin-bottom: 10px;
+        border-left: 2px solid lightgray;
+        padding-left: 10px;
+    }
+}
