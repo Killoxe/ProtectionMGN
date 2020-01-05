@@ -98,6 +98,9 @@ a.null::after {
 .btn span {
   text-transform: uppercase;
 }
+.hidden {
+  display: none;
+}
 .header {
   position: sticky;
   z-index: 5;
@@ -132,8 +135,48 @@ a.null::after {
   margin-right: 5px;
   margin-left: 18px;
 }
-.sticky {
-  background-color: #ffb942;
+.header.sticky {
+  background-color: rgba(12, 24, 36, 0.8);
+}
+.header.sticky .row {
+  border: none;
+  height: 50px;
+}
+.header.sticky img[src="../img/logo.svg"] {
+  display: none;
+}
+.header.sticky a {
+  color: white !important;
+}
+.header.sticky a::after {
+  background-color: white;
+}
+.butUp {
+  position: fixed;
+  top: auto;
+  bottom: 50px;
+  right: 50px;
+  width: 50px;
+  height: 50px;
+  display: block !important;
+  background: #0c1824;
+}
+.butUp::after {
+  content: "^";
+  position: static;
+  font-size: 50px;
+  color: white;
+  width: auto;
+  height: auto;
+  display: block;
+  background: #0c1824;
+  transition: 300ms;
+}
+.butUp:hover {
+  opacity: 0.8;
+}
+.butUp:hover::after {
+  width: auto;
 }
 .container {
   max-width: 1920px !important;
@@ -160,6 +203,15 @@ a.null::after {
 }
 .catalog {
   grid-template-areas: ". sth1 sth1 sth1 ." ". sth2 sth2 sth2 ." "stc1 stc1 stc1 stc1 stc1" ". sth3 sth3 sth3 ." "stc2 stc2 stc2 stc2 stc2";
+  /*&::after {
+		content: '';
+		background-color: rgba(186, 186, 186, 0.25);
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+	}*/
 }
 .catalog .h1 {
   grid-area: sth1;
@@ -239,59 +291,181 @@ a.null::after {
   margin: 90px 0 0 50px;
   grid-area: h1;
 }
+.map .h1::after {
+  background-color: #45a2ff;
+}
 .map__wrap {
+  position: relative;
   grid-area: mp;
   margin: 20px 0;
   color: white;
 }
 .map__contacts {
+  position: absolute;
+  top: 112px;
   display: inline-block;
   width: 429px;
   height: 559px;
   background-color: #0c1824;
+  z-index: 1;
+}
+.map__link {
+  position: relative;
+  height: 783px;
+  width: 688px;
+  background-color: #45a2ff;
+  z-index: 0;
+  margin: 0 0 0 auto;
 }
 .contacts__wrap {
   margin: 30px 30px 30px 50px;
   overflow: auto;
+  height: calc(100% - 60px);
+}
+.contacts__wrap::-webkit-scrollbar {
+  width: 2px;
+}
+.contacts__wrap::-webkit-scrollbar-button {
+  display: none;
+}
+.contacts__wrap::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.contacts__wrap::-webkit-scrollbar-thumb {
+  background-color: #ffb58f;
 }
 .contacts__card:not(:last-child) {
   border-bottom: 2px solid #ffb58f;
 }
+.contacts__card:not(:last-child) a {
+  margin-bottom: 15px;
+}
+.contacts__card:not(:first-child) {
+  margin-top: 15px;
+}
 .contacts__card h3 {
   margin-bottom: 12px;
-  font-weight: 100;
+  font-weight: 700 !important;
 }
 .contacts__card h4 {
-  font-weight: 700;
+  font-weight: 100 !important;
   margin-bottom: 15px;
 }
 .contacts__card a {
   color: white !important;
-  float: right;
-  margin-bottom: 15px;
 }
 .contacts__card a:after {
   background: white;
 }
-.contacts__date {
-  display: inline-grid;
-  grid-template-areas: ". .";
-  width: 50%;
+.contacts__card > a {
+  position: relative;
+  left: 50%;
 }
-.contacts__date span:first-child {
-  text-align: right;
-  margin-right: 5px;
+.contacts__date {
+  display: table-cell;
 }
 .contacts__phone {
-  display: inline-grid;
-  grid-template-areas: ". .";
-  width: 50%;
-  float: right;
+  display: table-cell;
 }
+.contacts__phone a {
+  margin: auto !important;
+}
+.contacts__phone a::after {
+  display: none;
+}
+.contacts__date span,
+.contacts__phone span {
+  display: table-cell;
+  padding-right: 5px;
+}
+.contacts__date span:first-child,
 .contacts__phone span:first-child {
   text-align: right;
-  margin-right: 5px;
 }
 .contacts__info {
   margin-bottom: 15px;
+}
+.aboutUs {
+  grid-template-areas: ". te te te ." "sld sld sld sld sld";
+}
+.aboutUs__wrap {
+  grid-area: te;
+  margin-left: 50px;
+}
+.aboutUs__slider {
+  grid-area: sld;
+  width: 334px;
+  height: 174px;
+  background-color: #45a2ff;
+  margin-bottom: 50px;
+}
+.aboutUs .h1 {
+  margin: 90px 0 50px 0;
+}
+.aboutUs .h1::after {
+  background-color: #ffb58f;
+}
+.aboutUs .h2 {
+  margin-bottom: 20px;
+}
+.aboutUs .h2 + span {
+  display: inline-block;
+  margin-bottom: 50px;
+}
+.aboutUs ul li {
+  position: relative;
+  margin-bottom: 20px;
+  list-style-type: none;
+}
+.aboutUs ul li h4 {
+  margin-bottom: 5px;
+}
+.aboutUs ul li::after {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  background-color: #ffb942;
+  transform: rotate(45deg);
+}
+footer {
+  background-color: #0c1824;
+  height: 318px;
+  text-align: center;
+  display: inline-block !important;
+}
+footer > a {
+  color: white !important;
+  font-size: 36px;
+}
+footer > a::after {
+  background-color: white;
+}
+footer h3 {
+  color: white;
+  margin: 50px 0 20px;
+}
+footer div {
+  display: flex;
+  margin-top: 50px;
+}
+footer div::after,
+footer div::before {
+  content: '';
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  top: 20px;
+}
+footer div::after {
+  margin-left: 20px;
+}
+footer div::before {
+  margin-right: 20px;
+}
+footer div a:not(:last-child) {
+  margin-right: 15px;
 }

@@ -16,31 +16,32 @@
 		<link rel="stylesheet" href="../bootstrap-4.4.1-dist/css/bootstrap.min.css">
 		<script src="../js/js.js"></script>
 	</head>
-	<body>
-		<header class="header container">
+	<body id="slider">
+		<header class="header container sticky">
 			<div class="row">
 				<div>
-					<a class="null" href=#"><img src="../img/logo.svg" alt=""></a>
+					<img src="../img/logo.svg" alt="">
 					<menu>
-						<a class="null" href=#">Главная</a>
-						<a class="null" href=#">Виды страхования</a>
-						<a class="null" href=#">Мы в регионе</a>
-						<a class="null" href=#">О нас</a>
+						<a class="null" href="#slider">Главная</a>
+						<a class="null" href="#catalog">Виды страхования</a>
+						<a class="null" href="#map">Мы в регионе</a>
+						<a class="null" href="#aboutUs">О нас</a>
 					</menu>
 				</div>
 				<div class="contacts">
-					<img src="../img/phone-call.svg" alt=""><a href="#">8 (909) 095-06-66</a>
-					<img src="../img/envelope.svg" alt=""><a href="#">89090950666@bk.ru</a>
+					<img src="../img/phone-call.svg" alt=""><a href="tel:89090950666">8 (909) 095-06-66</a>
+					<img src="../img/envelope.svg" alt=""><a href="mailto:89090950666@bk.ru">89090950666@bk.ru</a>
 				</div>
 			</div>
 		</header>
+		<a href="#slider" class="butUp"></a>
 		<div class="container">
 			<div class="row slider tb3in5">
 				<div class="slider__wrap">
 					
 				</div>
 			</div>
-			<div class="row catalog tb5in5">
+			<div class="row catalog tb5in5" id="catalog">
 				<div class="h1">Виды страхования</div>
 				<div class="h2 h2--first">Для физических лиц</div>
 				<div class="catalog__cards catalog__cards--first tb5in5">
@@ -129,7 +130,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="row map tb3in5">
+			<div class="row map tb3in5" id="map">
 				<div class="h1">Мы в Регионе</div>
 				<div class="map__wrap">
 					<div class="map__contacts">
@@ -144,7 +145,7 @@
 									</div>
 									<div class="contacts__phone">
 										<span>тел:</span>
-										<span>8 (906) 854-60-08<br>8 (919) 095-06-66<br>43-40-00</span>
+										<span><a href="tel:89068546008">8 (906) 854-60-08</a><br><a href="tel:89190950666">8 (919) 095-06-66</a><br><a href="tel:434000">43-40-00</a></span>
 									</div>
 								</div>
 								<a href="#">Показать на карте</a>
@@ -155,7 +156,7 @@
 								<div class="contacts__info">
 									<div class="contacts__phone">
 										<span>тел:</span>
-										<span>8 (922) 756-64-94</span>
+										<span><a href="tel:89227566494">8 (922) 756-64-94</a></span>
 									</div>
 								</div>
 								<a href="#">Показать на карте</a>
@@ -163,7 +164,29 @@
 								<div class="contacts__info">
 									<div class="contacts__phone">
 										<span>тел:</span>
-										<span>8 (951) 805-18-34</span>
+										<span><a href="89518051834">8 (951) 805-18-34</a></span>
+									</div>
+								</div>
+								<a href="#">Показать на карте</a>
+							</div>
+							<div class="contacts__card">
+								<h3>Челябинск</h3>
+								<h4 class="contacts__address">ул. Троицкая, 18, корпус 2</h4>
+								<div class="contacts__info">
+									<div class="contacts__phone">
+										<span>тел:</span>
+										<span><a href="tel:83572232413">8 (357) 223-24-13</a></span>
+									</div>
+								</div>
+								<a href="#">Показать на карте</a>
+							</div>
+							<div class="contacts__card">
+								<h3>Карталы</h3>
+								<h4 class="contacts__address">ул. Пушкина, 6А</h4>
+								<div class="contacts__info">
+									<div class="contacts__phone">
+										<span>тел:</span>
+										<span><a href="tel:89512555750">8 (951) 255-57-50</a></span>
 									</div>
 								</div>
 								<a href="#">Показать на карте</a>
@@ -171,16 +194,56 @@
 						</div>
 					</div>
 					<div class="map__link">
-
+						<iframe class="" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2379.3555751370322!2d58.98232761597788!3d53.390578979098045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43d12f03ca1e5d8d%3A0xc6bb3e9b7f2a8498!2z0YPQuy4g0KHQvtCy0LXRgtGB0LrQvtC5INCQ0YDQvNC40LgsIDM5LCDQnNCw0LPQvdC40YLQvtCz0L7RgNGB0LosINCn0LXQu9GP0LHQuNC90YHQutCw0Y8g0L7QsdC7LiwgNDU1MDM3!5e0!3m2!1sru!2sru!4v1578195917313!5m2!1sru!2sru" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+						<iframe class="hidden" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2340.392133613661!2d61.54398311599778!3d54.08452252686255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43ce4e53815f870f%3A0x35c58544c3cf9ca0!2z0YPQuy4g0JPQsNCz0LDRgNC40L3QsCwgNzQsINCi0YDQvtC40YbQuiwg0KfQtdC70Y_QsdC40L3RgdC60LDRjyDQvtCx0LsuLCA0NTcxMDM!5e0!3m2!1sru!2sru!4v1578196053012!5m2!1sru!2sru" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+						<iframe class="hidden" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2340.4903471955067!2d61.513870215997756!3d54.08278102699423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43ce4ee52ca834f9%3A0xb580bcfbc89700df!2z0KLQvtC90Lgg0JzQtdC90YzRiNC10L3QuNC90L7QuSDRg9C7LiwgMzQsINCi0YDQvtC40YbQuiwg0KfQtdC70Y_QsdC40L3RgdC60LDRjyDQvtCx0LsuLCA0NTcxMDM!5e0!3m2!1sru!2sru!4v1578196104209!5m2!1sru!2sru" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+						<iframe class="hidden" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2342.6930564356708!2d61.603509215996525!3d54.04371302994706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43ce4563642ee4ef%3A0x12b2cbb7edb169c7!2z0KLRgNC-0LjRhtC60LDRjyDRg9C7LiwgMTgsINCi0YDQvtC40YbQuiwg0KfQtdC70Y_QsdC40L3RgdC60LDRjyDQvtCx0LsuLCA0NTcxMDY!5e0!3m2!1sru!2sru!4v1578196152870!5m2!1sru!2sru" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+						<iframe class="hidden" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2397.947141132672!2d60.638638215968356!3d53.05725720402603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43d22de19c5f71c9%3A0xe9fa12d5feadef2b!2z0YPQuy4g0J_Rg9GI0LrQuNC90LAsIDYsINCa0LDRgNGC0LDQu9GLLCDQp9C10LvRj9Cx0LjQvdGB0LrQsNGPINC-0LHQuy4sIDQ1NzM1MQ!5e0!3m2!1sru!2sru!4v1578196202366!5m2!1sru!2sru" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 					</div>
 				</div>
 			</div>
-			<div class="row aboutUs tb5in5">
-				<div class="">
-					
+			<div class="row aboutUs tb5in5" id="aboutUs">
+				<div class="aboutUs__wrap">
+					<div class="h1">О нас</div>
+					<div class="h2">Страховое агенство “Защита - MGN”</div>
+					<span>Это профессиональная команда, предоставляющая качественные услуги в сфере страхования.</span>
+					<div class="h2">Наши приемущества:</div>
+					<ul>
+						<li>
+							<h4>Надежность и постоянство</h4>
+							<span>5 лет мы помогаем нашим клиентам сохранять свое имущество и здоровье</span>
+						</li>
+						<li>
+							<h4>Нам доверяют</h4>
+							<span>Более 10 тыс., клиентов, только в этом году мы помогли оформить страховку</span>
+						</li>
+						<li>
+							<h4>Ваша выгода</h4>
+							<span>Экономия Ваших сил и денежных средствпри условии высокого уровня страхового возмещения</span>
+						</li>
+						<li>
+							<h4>Ваша защита</h4>
+							<span>Для наших клиентов мы создаем надежную защиту при наступлении страхового случая</span>
+						</li>
+					</ul>
+					<div class="h2">Почему мы:</div>
+				</div>
+				<div class="aboutUs__slider">
+
 				</div>
 			</div>
 		</div>
+		<footer class="container">
+			<h3>Свяжитесь с нами</h3>
+			<a href="tel:89090950666">8 (909) 095-06-66</a><br>
+			<a href="mailto:89090950666@bk.ru">89090950666@bk.ru</a>
+			<div>
+				<a class="null" href=""><img src="../img/instagram.svg" alt=""></a>
+				<a class="null" href=""><img src="../img/viber.svg" alt=""></a>
+				<a class="null" href=""><img src="../img/vk.svg" alt=""></a>
+				<a class="null" href=""><img src="../img/whatsapp.svg" alt=""></a>
+			</div>
+		</footer>
 
 
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
