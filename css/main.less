@@ -120,8 +120,63 @@ a {
 	display: none;
 }
 
+.butUp {
+	position: fixed;
+	top: auto;
+	bottom: 45px;
+	right: 45px;
+	width: 50px;
+	height: 50px;
+	background: @mainC;
+	opacity: .6;
+	transition: 300ms;
+
+	&::after,
+	&::before {
+		content: "";
+		width: 20px;
+		height: 3px;
+		background-color: white;
+		transform: rotate(45deg);
+		position: absolute;
+		top: 25px;
+		left: 22px;
+	}
+	&::before {
+		transform: rotate(135deg);
+		left: 9px;
+	}
+	&:hover {
+		opacity: 1;
+
+		&::after {
+			width: 20px;
+		}
+	}
+}
+
+.container {
+	max-width: 1920px !important;
+	padding: 0 115px !important;
+}
+
+.row:not(:last-child) {
+	border-bottom: 2px solid @textC;
+}
+
+.tb3in5 {
+	display: grid !important;
+	grid-template-areas: ". st st st .";
+	grid-template-columns: repeat(5, 1fr);
+}
+.tb5in5 {
+	display: grid !important;
+	grid-template-areas: "st st st st st";
+	grid-template-columns: repeat(5, 1fr);
+}
+
 .header {
-	position: sticky;
+	position: relative;
 	z-index: 5;
 	top: 0;
 
@@ -175,56 +230,10 @@ a {
 				background-color: white;
 			}
 		}
-	}
-}
-.butUp {
-	position: fixed;
-	top: auto;
-	bottom: 50px;
-	right: 50px;
-	width: 50px;
-	height: 50px;
-	display: block !important;
-	background: #0c1824;
-
-	&::after {
-		content: "^";
-		position: static;
-		font-size: 50px;
-		color: white;
-		width: auto;
-		height: auto;
-		display: block;
-		background: #0c1824;
-		transition: 300ms;
-	}
-	&:hover {
-		opacity: .8;
-
-		&::after {
-			width: auto;
+		menu {
+			margin-left: 0;
 		}
 	}
-}
-
-.container {
-	max-width: 1920px !important;
-	padding: 0 115px !important;
-}
-
-.row:not(:last-child) {
-	border-bottom: 2px solid @textC;
-}
-
-.tb3in5 {
-	display: grid !important;
-	grid-template-areas: ". st st st .";
-	grid-template-columns: repeat(5, 1fr);
-}
-.tb5in5 {
-	display: grid !important;
-	grid-template-areas: "st st st st st";
-	grid-template-columns: repeat(5, 1fr);
 }
 
 .slider {
@@ -319,6 +328,7 @@ a {
 			bottom: 30px;
 			color: white !important;
 			font-size: 18px;
+			cursor: pointer;
 
 			&:after {
 				background: white;
@@ -528,7 +538,6 @@ footer {
 		color: white;
 		margin: 50px 0 20px;
 	}
-	
 	div {
 		display: flex;
 		margin-top: 50px;
@@ -550,11 +559,91 @@ footer {
 		}
 
 		a {
+			opacity: .6;
+			transition: 300ms;
 
+			&:hover {
+				opacity: 1;
+			}
 			&:not(:last-child) {
 				margin-right: 15px;
 			}
 		}
 	}
+}
+
+.modalText {
+	// position: fixed;
+	// top: 0;
+	// left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(12, 24, 36, 0.5);
+	// z-index: 6;
+
+	&__wrap {
+		position: absolute;
+		width: 700px;
+		height: 100%;
+		background-color: white;
+		margin: 40px auto;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+
+		&.close {
+			text-shadow: none;
+			color: @textC;
+			font-size: 27px;
+			position: absolute;
+			z-index: 7;
+			top: 11px;
+			right: 11px;
+			width: 30px;
+			height: 30px;
+			background-color: rgba(255, 255, 255, 0.7) !important;
+			border-radius: 50%;
+		}
+	}
+	&__img {
+		position: relative;
+		background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/Rectangle58.png);
+		height: 192px;
+		width: 100%;
+
+		.h2 {
+			position: absolute;
+			bottom: 0;
+			left: 30px;
+		}
+	}
+	&__top {
+		margin: 20px 30px 30px 30px;
+	}
+}
+.collap {
+
+	&__card {
+		border: 2px solid @mainC;
+		border-radius: 2px;
+		padding: 12px;
+		margin-bottom: 15px;
+	}
+	&__header {
+		display: flex;
+
+		h3 {
+			margin: 0;
+		}
+		div {
+			width: 18px;
+			height: 18px;
+		}
+	}
+}
+.modalForm {
+
 }
 // lessc main.less main.css

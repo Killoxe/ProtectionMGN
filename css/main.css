@@ -101,8 +101,57 @@ a.null::after {
 .hidden {
   display: none;
 }
+.butUp {
+  position: fixed;
+  top: auto;
+  bottom: 45px;
+  right: 45px;
+  width: 50px;
+  height: 50px;
+  background: #00509e;
+  opacity: 0.6;
+  transition: 300ms;
+}
+.butUp::after,
+.butUp::before {
+  content: "";
+  width: 20px;
+  height: 3px;
+  background-color: white;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 25px;
+  left: 22px;
+}
+.butUp::before {
+  transform: rotate(135deg);
+  left: 9px;
+}
+.butUp:hover {
+  opacity: 1;
+}
+.butUp:hover::after {
+  width: 20px;
+}
+.container {
+  max-width: 1920px !important;
+  padding: 0 115px !important;
+}
+.row:not(:last-child) {
+  border-bottom: 2px solid #0c1824;
+}
+.tb3in5 {
+  display: grid !important;
+  grid-template-areas: ". st st st .";
+  grid-template-columns: repeat(5, 1fr);
+}
+.tb5in5 {
+  display: grid !important;
+  grid-template-areas: "st st st st st";
+  grid-template-columns: repeat(5, 1fr);
+}
 .header {
-  position: sticky;
+  position: relative;
   z-index: 5;
   top: 0;
 }
@@ -151,49 +200,8 @@ a.null::after {
 .header.sticky a::after {
   background-color: white;
 }
-.butUp {
-  position: fixed;
-  top: auto;
-  bottom: 50px;
-  right: 50px;
-  width: 50px;
-  height: 50px;
-  display: block !important;
-  background: #0c1824;
-}
-.butUp::after {
-  content: "^";
-  position: static;
-  font-size: 50px;
-  color: white;
-  width: auto;
-  height: auto;
-  display: block;
-  background: #0c1824;
-  transition: 300ms;
-}
-.butUp:hover {
-  opacity: 0.8;
-}
-.butUp:hover::after {
-  width: auto;
-}
-.container {
-  max-width: 1920px !important;
-  padding: 0 115px !important;
-}
-.row:not(:last-child) {
-  border-bottom: 2px solid #0c1824;
-}
-.tb3in5 {
-  display: grid !important;
-  grid-template-areas: ". st st st .";
-  grid-template-columns: repeat(5, 1fr);
-}
-.tb5in5 {
-  display: grid !important;
-  grid-template-areas: "st st st st st";
-  grid-template-columns: repeat(5, 1fr);
+.header.sticky menu {
+  margin-left: 0;
 }
 .slider__wrap {
   grid-area: st;
@@ -280,6 +288,7 @@ a.null::after {
   bottom: 30px;
   color: white !important;
   font-size: 18px;
+  cursor: pointer;
 }
 .catalog__card a:after {
   background: white;
@@ -466,6 +475,73 @@ footer div::after {
 footer div::before {
   margin-right: 20px;
 }
+footer div a {
+  opacity: 0.6;
+  transition: 300ms;
+}
+footer div a:hover {
+  opacity: 1;
+}
 footer div a:not(:last-child) {
   margin-right: 15px;
+}
+.modalText {
+  right: 0;
+  bottom: 0;
+  background-color: rgba(12, 24, 36, 0.5);
+}
+.modalText__wrap {
+  position: absolute;
+  width: 700px;
+  height: 100%;
+  background-color: white;
+  margin: 40px auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+}
+.modalText__wrap.close {
+  text-shadow: none;
+  color: #0c1824;
+  font-size: 27px;
+  position: absolute;
+  z-index: 7;
+  top: 11px;
+  right: 11px;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  border-radius: 50%;
+}
+.modalText__img {
+  position: relative;
+  background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/Rectangle58.png);
+  height: 192px;
+  width: 100%;
+}
+.modalText__img .h2 {
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+}
+.modalText__top {
+  margin: 20px 30px 30px 30px;
+}
+.collap__card {
+  border: 2px solid #00509e;
+  border-radius: 2px;
+  padding: 12px;
+  margin-bottom: 15px;
+}
+.collap__header {
+  display: flex;
+}
+.collap__header h3 {
+  margin: 0;
+}
+.collap__header div {
+  width: 18px;
+  height: 18px;
 }
