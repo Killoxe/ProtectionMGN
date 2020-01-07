@@ -4,7 +4,14 @@
 @yellow: #ffb942;
 @ligtYellow: #ffb58f;
 
-@full: "max-width: 1000px";
+@full: ~"(max-width: 1920px)";
+@bigDesktop: ~"(max-width: 1600px)";
+@desktop: ~"(max-width: 1366px)";
+@smallDesktop: ~"(max-width: 1280px)";
+@laptop: ~"(max-width: 1024px)";
+@smallLaptop: ~"(max-width: 768px)";
+@bigPhone: ~"(max-width: 480px)";
+@phone: ~"(max-width: 320px)";
 
 @font-face {
 	font-family: "Comfortaa";
@@ -37,6 +44,10 @@ h1,
 	padding-top: 15px;
 	text-transform: uppercase;
 
+	@media @laptop {
+		font-size: 40px !important;
+	}
+
 	&::after {
 		content: '';
 		position: absolute;
@@ -52,16 +63,28 @@ h2,
 	font-weight: 300 !important;
 	font-size: 36px !important;
 	line-height: 40px !important;
+
+	@media @laptop {
+		font-size: 30px !important;
+	}
 }
 h3 {
 	font-weight: 300 !important;
 	font-size: 24px !important;
 	line-height: 27px !important;
+
+	@media @laptop {
+		font-size: 20px !important;
+	}
 }
 h4 {
 	font-weight: bold !important;
 	font-size: 18px !important;
 	line-height: 20px !important;
+
+	@media @laptop {
+		font-size: 16px !important;
+	}
 }
 a {
 	color: @textC !important;
@@ -138,13 +161,18 @@ a {
 	position: fixed;
 	top: auto;
 	bottom: 45px;
-	right: 45px;
+	right: 3vw;
 	width: 50px;
 	height: 50px;
 	background: @mainC;
 	opacity: .6;
 	border-radius: 50%;
 	transition: 300ms;
+	z-index: 1;
+
+	@media @bigDesktop {
+		right: 2vw;
+	}
 
 	&::after,
 	&::before {
@@ -172,7 +200,11 @@ a {
 
 .container {
 	max-width: 1920px !important;
-	padding: 0 115px !important;
+	padding: 0 6vw !important;
+
+	@media @laptop {
+		padding: 0 40px !important;
+	}
 }
 
 .row:not(:last-child) {
@@ -183,11 +215,21 @@ a {
 	display: grid !important;
 	grid-template-areas: ". st st st .";
 	grid-template-columns: repeat(5, 1fr);
+
+	@media @desktop {
+		grid-template-areas: "st st st";
+		grid-template-columns: repeat(3, 1fr);
+	}
 }
 .tb5in5 {
 	display: grid !important;
 	grid-template-areas: "st st st st st";
 	grid-template-columns: repeat(5, 1fr);
+
+	@media @desktop {
+		grid-template-areas: "st st st";
+		grid-template-columns: repeat(3, 1fr);
+	}
 }
 
 .header {
@@ -214,6 +256,10 @@ a {
 			margin-right: 15px;
 			transition: 300ms;
 			font-size: 18px;
+
+			@media @laptop {
+				font-size: 16px;
+			}
 			
 			&:hover {
 				color: @blue !important;
@@ -222,6 +268,10 @@ a {
 	}
 	&__contacts {
 		font-size: 18px;
+
+		@media @laptop {
+			font-size: 16px;
+		}
 		
 		img {
 			margin-right: 5px;
@@ -266,6 +316,40 @@ a {
 		grid-area: st;
 		height: 800px;
 		margin: 20px 0 25px 0;
+
+		@media @desktop {
+			height: 640px;
+		}
+	}
+	.swiper-button-next,
+	.swiper-button-prev {
+		color: @textC;
+		bottom: 50px;
+		top: auto;
+		left: 60px;
+		right: auto;
+		
+		@media @desktop {
+			bottom: auto;
+			top: 50%;
+			left: 10px;
+			right: auto;
+		}
+	}
+	.swiper-button-next {
+		left: 23%;
+
+		@media @desktop {
+			left: auto;
+			right: 10px;
+		}
+	}
+
+	.swiper-slide {
+
+		@media @desktop {
+			padding: 0 50px;
+		}
 	}
 }
 .slide {
@@ -276,6 +360,10 @@ a {
 	height: 559px;
 	background-color: @textC;
 	z-index: 1;
+
+	@media @desktop {
+		top: 42px;
+	}
 
 	&__wrap {
 		margin: 30px 30px 30px 50px;
@@ -311,6 +399,10 @@ a {
 			text-transform: uppercase;
 			align-self: flex-end;
 
+			@media @laptop {
+				font-size: 16px;
+			}
+
 			&::after {
 				background: white;
 			}
@@ -318,11 +410,17 @@ a {
 	}
 	&__img {
 		position: relative;
-		height: 783px;
-		width: 688px;
-		background-color: @blue;
+		height: 100%;
+		width: 100%;
+		max-width: 67%;
 		z-index: 0;
 		margin: 0 0 0 auto;
+
+		img {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
 	}
 }
 .catalog {
@@ -332,6 +430,16 @@ a {
 	"stc1 stc1 stc1 stc1 stc1"
 	". sth3 sth3 sth3 ."
 	"stc2 stc2 stc2 stc2 stc2";
+
+	@media @desktop {
+		grid-template-areas:
+		"sth1 sth1 sth1"
+		"sth2 sth2 sth2"
+		"stc1 stc1 stc1"
+		"sth3 sth3 sth3"
+		"stc2 stc2 stc2";
+		grid-template-columns: repeat(3, 1fr);
+	}
 
 	.h1 {
 		grid-area: sth1;
@@ -352,10 +460,23 @@ a {
 		margin-top: 20px;
 
 		&--first {
-	  grid-area: stc1;
+	 		 grid-area: stc1;
 
 			&.tb5in5 {
 				grid-gap: 10px;
+
+				@media @bigDesktop {
+					grid-template-areas: "st st st st";
+					grid-template-columns: repeat(4, 1fr);
+				}
+				@media @smallDesktop {
+					grid-template-areas: "st st st";
+					grid-template-columns: repeat(3, 1fr);
+				}
+				// @media @laptop {
+				// 	grid-template-areas: "st st";
+				// 	grid-template-columns: repeat(2, 1fr);
+				// }
 			}
 		}
 		&--last {
@@ -364,6 +485,19 @@ a {
 
 			&.tb5in5 {
 				grid-gap: 10px;
+
+				@media @bigDesktop {
+					grid-template-areas: "st st st st";
+					grid-template-columns: repeat(4, 1fr);
+				}
+				@media @smallDesktop {
+					grid-template-areas: "st st st";
+					grid-template-columns: repeat(3, 1fr);
+				}
+				// @media @laptop {
+				// 	grid-template-areas: "st st";
+				// 	grid-template-columns: repeat(2, 1fr);
+				// }
 			}
 		}
 	}
@@ -389,7 +523,7 @@ a {
 			top: 0;
 			width: 100%;
 			height: 100%;
-			padding: 30px;
+			padding: 9%;
 			transition: all 300ms;
 
 			&:hover {
@@ -401,14 +535,21 @@ a {
 		}
 		span {
 			opacity: 0;
+			max-height: 149px;
+			overflow: hidden;
+			display: block;
 		}
 		a {
 			position: absolute;
-			right: 30px;
-			bottom: 30px;
+			right: 9%;
+			bottom: 9%;
 			color: white !important;
 			font-size: 18px;
 			cursor: pointer;
+
+			@media @laptop {
+				font-size: 16px;
+			}
 
 			&:after {
 				background: white;
@@ -430,6 +571,13 @@ a {
 	grid-template-areas: 
 	". h1 h1 h1 ."
 	". mp mp mp .";
+
+	@media @desktop {
+		grid-template-areas: 
+		"h1 h1 h1"
+		"mp mp mp";
+		grid-template-columns: repeat(3, 1fr);
+	}
 
 	.h1 {
 		margin: 90px 0 0 50px;
@@ -453,14 +601,22 @@ a {
 		height: 559px;
 		background-color: @textC;
 		z-index: 1;
+
+		@media @desktop {
+			top: 42px;
+		}
 	}
 	&__link {
 		position: relative;
 		height: 783px;
-		width: 688px;
-		background-color: @blue;
+		width: 100%;
+		max-width: 67%;
 		z-index: 0;
 		margin: 0 0 0 auto;
+
+		@media @desktop {
+			height: 640px;
+		}
 	}
 }
 .contacts {
@@ -547,16 +703,67 @@ a {
 	". te te te ."
 	"sld sld sld sld sld";
 
+	@media @desktop {
+		grid-template-areas: 
+		"te te te"
+		"sld sld sld";
+		grid-template-columns: repeat(3, 1fr);
+	}
+
 	&__wrap {
 		grid-area: te;
 		margin-left: 50px;
 	}
 	&__slider {
 		grid-area: sld;
-		width: 334px;
-		height: 174px;
-		background-color: @blue;
 		margin-bottom: 50px;
+		width: 100%;
+
+		.swiper-slide {
+			background-color: @blue;
+			border-radius: 2px;
+			padding: 1.8%;;
+			color: white;
+			font-size: 24px;
+			line-height: 27px;
+			height: auto;
+			transition: 300ms;
+
+			&-active {
+				background-color: @mainC;
+
+				@media @smallLaptop {
+					background-color: @blue;
+				}
+
+				+ .swiper-slide + .swiper-slide + .swiper-slide + .swiper-slide + {
+					background-color: @mainC;
+
+					@media @bigDesktop {
+						background-color: @blue;
+					}
+				}
+				
+				+ .swiper-slide + .swiper-slide + .swiper-slide + {
+
+					@media @bigDesktop {
+						background-color: @mainC;
+					}
+					@media @smallDesktop {
+						background-color: @blue;
+					}
+				}
+				+ .swiper-slide + .swiper-slide + {
+
+					@media @smallDesktop {
+						background-color: @mainC;
+					}
+					@media @smallLaptop {
+						background-color: @blue;
+					}
+				}
+			}
+		}
 	}
 	.h1 {
 		margin: 90px 0 50px 0;
@@ -607,6 +814,10 @@ footer {
 		color: white !important;
 		font-size: 36px;
 		// margin-bottom: 11px;
+
+		@media @laptop {
+			font-size: 30px;
+		}
 
 		&::after {
 			background-color: white;
