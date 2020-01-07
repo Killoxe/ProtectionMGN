@@ -1,13 +1,15 @@
 $(document).ready(function () {
     //1. изменение класса при скролле
     var $header = $('header');
+    // var $btnUp = $('butUp');
 
     $(window).scroll(function () {
-        if ( $(this).scrollTop() > 75 ) {
+        if ( $(this).scrollTop() > 1 ) {
             $header.addClass('sticky');
-
+            // $btnUp.removeClass('hidden');
         } else {
             $header.removeClass('sticky');
+            // $btnUp.addClass('hidden');
         }
     });
 

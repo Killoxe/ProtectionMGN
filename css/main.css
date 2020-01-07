@@ -74,14 +74,26 @@ a:hover:after {
 a.null::after {
   content: none;
 }
-.btn {
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-button {
+  display: none;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ffb58f;
+}
+.btnn {
   position: relative;
-  border: 1px solid #ffb942;
+  border: 2px solid #ffb942;
   padding: 11px 30px 9px;
   width: fit-content;
   cursor: pointer;
 }
-.btn::after {
+.btnn::after {
   content: '';
   position: absolute;
   top: 0;
@@ -90,13 +102,15 @@ a.null::after {
   height: 100%;
   background: #ffb942;
   transition: 300ms;
-  z-index: -1;
+  z-index: 0;
 }
-.btn:hover::after {
+.btnn:hover::after {
   width: 0;
 }
-.btn span {
+.btnn span {
   text-transform: uppercase;
+  position: relative;
+  z-index: 1;
 }
 .hidden {
   display: none;
@@ -110,6 +124,7 @@ a.null::after {
   height: 50px;
   background: #00509e;
   opacity: 0.6;
+  border-radius: 50%;
   transition: 300ms;
 }
 .butUp::after,
@@ -120,7 +135,7 @@ a.null::after {
   background-color: white;
   transform: rotate(45deg);
   position: absolute;
-  top: 25px;
+  top: 22px;
   left: 22px;
 }
 .butUp::before {
@@ -151,15 +166,14 @@ a.null::after {
   grid-template-columns: repeat(5, 1fr);
 }
 .header {
-  position: relative;
-  z-index: 5;
-  top: 0;
+  transition: 300ms;
 }
 .header .row {
   height: 100px;
   border-bottom: 2px solid #0c1824;
   align-content: center;
   justify-content: space-between;
+  transition: 300ms;
 }
 .header .row > div {
   display: flex;
@@ -168,6 +182,7 @@ a.null::after {
 .header menu {
   display: inline-block;
   margin-left: 30px;
+  transition: 600ms;
 }
 .header menu a {
   margin-right: 15px;
@@ -177,22 +192,31 @@ a.null::after {
 .header menu a:hover {
   color: #45a2ff !important;
 }
-.header .contacts {
+.header__contacts {
   font-size: 18px;
 }
-.header .contacts img {
+.header__contacts img {
   margin-right: 5px;
   margin-left: 18px;
 }
+.header img[src="../img/logo.svg"] {
+  width: 69px;
+  height: 73px;
+  transition: 300ms;
+}
 .header.sticky {
   background-color: rgba(12, 24, 36, 0.8);
+  position: sticky;
+  z-index: 5;
+  top: 0;
 }
 .header.sticky .row {
   border: none;
   height: 50px;
 }
 .header.sticky img[src="../img/logo.svg"] {
-  display: none;
+  width: 0;
+  height: 73px;
 }
 .header.sticky a {
   color: white !important;
@@ -206,8 +230,58 @@ a.null::after {
 .slider__wrap {
   grid-area: st;
   height: 800px;
-  background-color: #0c1824;
   margin: 20px 0 25px 0;
+}
+.slide {
+  position: absolute;
+  top: 112px;
+  display: inline-block;
+  width: 429px;
+  height: 559px;
+  background-color: #0c1824;
+  z-index: 1;
+}
+.slide__wrap {
+  margin: 30px 30px 30px 50px;
+  height: calc(100% - 60px);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.slide__wrap .swiper-pagination.swiper-pagination-fraction,
+.slide__wrap .swiper-pagination.swiper-pagination-fraction span {
+  color: rgba(255, 255, 255, 0.1);
+  font-family: 'Oswald', sans-serif !important;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 96px;
+  line-height: 95px;
+  position: relative;
+  text-align: right;
+}
+.slide__wrap h4 {
+  opacity: 0.8;
+  font-weight: 100 !important;
+}
+.slide__wrap a {
+  color: white !important;
+  font-size: 18px;
+  opacity: 0.8;
+  width: fit-content;
+  text-transform: uppercase;
+  align-self: flex-end;
+}
+.slide__wrap a::after {
+  background: white;
+}
+.slide__img {
+  position: relative;
+  height: 783px;
+  width: 688px;
+  background-color: #45a2ff;
+  z-index: 0;
+  margin: 0 0 0 auto;
 }
 .catalog {
   grid-template-areas: ". sth1 sth1 sth1 ." ". sth2 sth2 sth2 ." "stc1 stc1 stc1 stc1 stc1" ". sth3 sth3 sth3 ." "stc2 stc2 stc2 stc2 stc2";
@@ -326,21 +400,21 @@ a.null::after {
   z-index: 0;
   margin: 0 0 0 auto;
 }
-.contacts__wrap {
+.contacts {
   margin: 30px 30px 30px 50px;
   overflow: auto;
   height: calc(100% - 60px);
 }
-.contacts__wrap::-webkit-scrollbar {
+.contacts::-webkit-scrollbar {
   width: 2px;
 }
-.contacts__wrap::-webkit-scrollbar-button {
+.contacts::-webkit-scrollbar-button {
   display: none;
 }
-.contacts__wrap::-webkit-scrollbar-track {
+.contacts::-webkit-scrollbar-track {
   background-color: transparent;
 }
-.contacts__wrap::-webkit-scrollbar-thumb {
+.contacts::-webkit-scrollbar-thumb {
   background-color: #ffb58f;
 }
 .contacts__card:not(:last-child) {
@@ -486,14 +560,12 @@ footer div a:not(:last-child) {
   margin-right: 15px;
 }
 .modalText {
-  right: 0;
-  bottom: 0;
   background-color: rgba(12, 24, 36, 0.5);
 }
 .modalText__wrap {
   position: absolute;
   width: 700px;
-  height: 100%;
+  height: fit-content;
   background-color: white;
   margin: 40px auto;
   top: 0;
@@ -502,7 +574,7 @@ footer div a:not(:last-child) {
   right: 0;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
 }
-.modalText__wrap.close {
+.modalText__wrap .close {
   text-shadow: none;
   color: #0c1824;
   font-size: 27px;
@@ -529,11 +601,17 @@ footer div a:not(:last-child) {
 .modalText__top {
   margin: 20px 30px 30px 30px;
 }
+.modalText__top .btnn {
+  margin: 40px auto 0 auto;
+}
 .collap__card {
   border: 2px solid #00509e;
   border-radius: 2px;
   padding: 12px;
   margin-bottom: 15px;
+}
+.collap__card .collapse {
+  margin-top: 15px;
 }
 .collap__header {
   display: flex;
@@ -542,6 +620,44 @@ footer div a:not(:last-child) {
   margin: 0;
 }
 .collap__header div {
-  width: 18px;
-  height: 18px;
+  width: 100%;
+  position: relative;
+}
+.collap__header div::before,
+.collap__header div::after {
+  content: '';
+  width: 15px;
+  height: 2px;
+  background: #0c1824;
+  display: block;
+  position: absolute;
+  top: 12px;
+  right: 0;
+  transform: rotate(45deg);
+  transition: 300ms;
+}
+.collap__header div::after {
+  transform: rotate(135deg);
+}
+.collap__header div.collapsed::before {
+  transform: rotate(0deg);
+}
+.collap__header div.collapsed::after {
+  transform: rotate(90deg);
+}
+.modalForm {
+  position: fixed !important;
+  background-color: rgba(12, 24, 36, 0.5);
+}
+.modalForm__wrap {
+  position: absolute;
+  width: 700px;
+  height: fit-content;
+  background-color: white;
+  margin: 40px auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
 }
