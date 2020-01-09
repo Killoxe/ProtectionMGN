@@ -235,35 +235,48 @@ a {
 .header {
 	transition: 300ms;
 
-	.row {
+	@media @laptop {
+		background-color: rgba(12, 24, 36, 0.8);
+	}
+
+	&__wrap {
 		height: 100px;
 		border-bottom: 2px solid @textC;
 		align-content: center;
 		justify-content: space-between;
 		transition: 300ms;
 
+		@media @laptop {
+			display: none;
+		}
+
 		> div {
 			display: flex;
 			align-items: center;
 		}
-	}
-	menu {
-		display: inline-block;
-		margin-left: 30px;
-		transition: 600ms;
-
-		a {
-			margin-right: 15px;
+		menu {
+			display: inline-block;
+			margin-left: 30px;
+			transition: 600ms;
+	
+			a {
+				margin-right: 15px;
+				transition: 300ms;
+				font-size: 18px;
+	
+				@media @laptop {
+					font-size: 16px;
+				}
+				
+				&:hover {
+					color: @blue !important;
+				}
+			}
+		}
+		img[src="../img/logo.svg"] {
+			width: 69px;
+			height: 73px;
 			transition: 300ms;
-			font-size: 18px;
-
-			@media @laptop {
-				font-size: 16px;
-			}
-			
-			&:hover {
-				color: @blue !important;
-			}
 		}
 	}
 	&__contacts {
@@ -278,34 +291,82 @@ a {
 			margin-left: 18px;
 		}
 	}
-	img[src="../img/logo.svg"] {
-		width: 69px;
-		height: 73px;
-		transition: 300ms;
+
+	&__burger {
+		display: none;
+
+		@media @laptop {
+			display: block;
+		}
 	}
+	&__btn {
+		width: 50px;
+		height: 50px;
+		position: relative;
+		left: -25px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+		padding: 10px 0;
+		
+		div {
+			width: 30px;
+			height: 2px;
+			background-color: white;
+			border-radius: 1px;
+		}
+		&.collapse {
+
+			div:nth-child(1) {
+				transform: rotate(135deg);
+			}
+			div:nth-child(2) {
+				transform: rotate(135deg);
+			}
+			div:nth-child(3) {
+				transform: rotate(135deg);
+			}
+		}
+	}
+
 	&.sticky {
 		background-color: rgba(12, 24, 36, 0.8);
 		position: sticky;
 		z-index: 5;
 		top: 0;
-	
-		.row {
-			border: none;
-			height: 50px;
+
+		@media @laptop {
+			background-color: transparent;
 		}
-		img[src="../img/logo.svg"] {
-			width: 0;
-			height: 73px;
-		}
-		a {
-			color: white !important;
 	
-			&::after {
-				background-color: white;
+		.header {
+
+			&__wrap {
+				border: none;
+				height: 50px;
+	
+				img[src="../img/logo.svg"] {
+					width: 0;
+					height: 73px;
+				}
+				a {
+					color: white !important;
+			
+					&::after {
+						background-color: white;
+					}
+				}
+				menu {
+					margin-left: 0;
+				}
 			}
-		}
-		menu {
-			margin-left: 0;
+			&__burger {
+
+			}
+			&__btn {
+				background-color: rgba(12, 24, 36, 0.8);
+			}
 		}
 	}
 }
@@ -383,9 +444,6 @@ a {
 			line-height: 95px;
 			position: relative;
 			text-align: right;
-		}
-		.h1 {
-
 		}
 		h4 {
 			opacity: 0.8;

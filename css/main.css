@@ -213,34 +213,49 @@ a.null::after {
 .header {
   transition: 300ms;
 }
-.header .row {
+@media (max-width: 1024px) {
+  .header {
+    background-color: rgba(12, 24, 36, 0.8);
+  }
+}
+.header__wrap {
   height: 100px;
   border-bottom: 2px solid #0c1824;
   align-content: center;
   justify-content: space-between;
   transition: 300ms;
 }
-.header .row > div {
+@media (max-width: 1024px) {
+  .header__wrap {
+    display: none;
+  }
+}
+.header__wrap > div {
   display: flex;
   align-items: center;
 }
-.header menu {
+.header__wrap menu {
   display: inline-block;
   margin-left: 30px;
   transition: 600ms;
 }
-.header menu a {
+.header__wrap menu a {
   margin-right: 15px;
   transition: 300ms;
   font-size: 18px;
 }
 @media (max-width: 1024px) {
-  .header menu a {
+  .header__wrap menu a {
     font-size: 16px;
   }
 }
-.header menu a:hover {
+.header__wrap menu a:hover {
   color: #45a2ff !important;
+}
+.header__wrap img[src="../img/logo.svg"] {
+  width: 69px;
+  height: 73px;
+  transition: 300ms;
 }
 .header__contacts {
   font-size: 18px;
@@ -254,10 +269,39 @@ a.null::after {
   margin-right: 5px;
   margin-left: 18px;
 }
-.header img[src="../img/logo.svg"] {
-  width: 69px;
-  height: 73px;
-  transition: 300ms;
+.header__burger {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .header__burger {
+    display: block;
+  }
+}
+.header__btn {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  left: -25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 0;
+}
+.header__btn div {
+  width: 30px;
+  height: 2px;
+  background-color: white;
+  border-radius: 1px;
+}
+.header__btn.collapse div:nth-child(1) {
+  transform: rotate(135deg);
+}
+.header__btn.collapse div:nth-child(2) {
+  transform: rotate(135deg);
+}
+.header__btn.collapse div:nth-child(3) {
+  transform: rotate(135deg);
 }
 .header.sticky {
   background-color: rgba(12, 24, 36, 0.8);
@@ -265,22 +309,30 @@ a.null::after {
   z-index: 5;
   top: 0;
 }
-.header.sticky .row {
+@media (max-width: 1024px) {
+  .header.sticky {
+    background-color: transparent;
+  }
+}
+.header.sticky .header__wrap {
   border: none;
   height: 50px;
 }
-.header.sticky img[src="../img/logo.svg"] {
+.header.sticky .header__wrap img[src="../img/logo.svg"] {
   width: 0;
   height: 73px;
 }
-.header.sticky a {
+.header.sticky .header__wrap a {
   color: white !important;
 }
-.header.sticky a::after {
+.header.sticky .header__wrap a::after {
   background-color: white;
 }
-.header.sticky menu {
+.header.sticky .header__wrap menu {
   margin-left: 0;
+}
+.header.sticky .header__btn {
+  background-color: rgba(12, 24, 36, 0.8);
 }
 .slider__wrap {
   grid-area: st;
