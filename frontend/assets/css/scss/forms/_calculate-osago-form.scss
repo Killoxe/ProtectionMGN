@@ -1,0 +1,23 @@
+@import "../variables";
+
+#calculate-osago-form {
+  .field-calculateosagoform-accept {
+    margin-top: 10px;
+  }
+
+  .field-calculateosagoform-horse_power,
+  .field-calculateosagoform-registration {
+    &.has-error {
+      input[type="radio"] + label {
+        &:before {
+          box-shadow: 0px 0px 5px 0px $danger-color;
+          border: 2px solid $danger-color;
+        }
+      }
+    }
+  }
+
+  .field-calculateosagoform-peoplevalid {
+    display: none;
+  }
+}

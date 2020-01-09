@@ -1,6 +1,6 @@
 <?php
 return [
     'url.rules' => [
-        '<action:(index|error)>' => 'site/<action>',
+        '<action:(index|feedback|calculate-osago|error)>' => 'site/<action>',
     ]
 ];

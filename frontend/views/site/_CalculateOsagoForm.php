@@ -1,4 +1,5 @@
 <?php
+
 use yii\widgets\Pjax;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
@@ -13,27 +14,49 @@ use frontend\widgets\CalculateOsagoFormPeopleListEdit\CalculateOsagoFormPeopleLi
 /* @var $model frontend\models\forms\CalculateOsagoForm */
 ?>
 
-<?php Pjax::begin(['enablePushState' => false]) ?>
+<?php Pjax::begin(['enablePushState' => false, 'id' => 'calculate-osago-pjax']) ?>
 
 <?php $form = ActiveForm::begin([
     'id' => 'calculate-osago-form',
     'options' => [
         'data-pjax' => true,
     ],
+    'action' => ['site/calculate-osago-form'],
+    'validationUrl' => ['site/calculate-osago-form-validation']
 ]) ?>
 
-    <?= $form->field($model, 'surname') ?>
+    <?= Html::beginTag('div', ['style' => ['margin-bottom' => '15px']]); ?>
+        Обязательное для заполнение поле
+        <?= Html::tag('div', '', ['class' => 'required-icon']); ?>
+    <?= Html::endTag('div'); ?>
 
-    <?= $form->field($model, 'name') ?>
+    <?= $form
+        ->field($model, 'surname')
+        ->textInput(['placeholder' => 'Ваш ответ']); ?>
 
-    <?= $form->field($model, 'patronymic') ?>
+    <?= $form
+        ->field($model, 'name')
+        ->textInput(['placeholder' => 'Ваш ответ']); ?>
+
+    <?= $form
+        ->field($model, 'patronymic')
+        ->textInput(['placeholder' => 'Ваш ответ']); ?>
+
+    <?= $form->field($model, 'peopleValid')
+        ->hiddenInput() ?>
 
     <?= CalculateOsagoFormPeopleListEdit::widget([
         'items' => $model,
         'templateItem' => $model
     ]) ?>
 
-    <?= $form->field($model, 'date_end_insurance_policy')->widget(DatePicker::class, []) ?>
+    <?= $form
+        ->field($model, 'date_end_insurance_policy', ['template' => "{label}\n{input}"])
+        ->widget(DatePicker::class, [
+            'options' => [
+                'placeholder' => 'Выберите дату',
+            ]
+        ]) ?>
 
     <?= $form->field($model, 'horse_power')->radioList(
         HorsePower::getList(),
@@ -61,18 +84,25 @@ use frontend\widgets\CalculateOsagoFormPeopleListEdit\CalculateOsagoFormPeopleLi
             }
         ]) ?>
 
-    <?= $form->field($model, 'email') ?>
+    <?= $form
+        ->field($model, 'email')
+        ->textInput(['placeholder' => 'Ваш ответ']); ?>
 
     <?= $form->field($model, 'phone')->widget(MaskedInput::class, [
         'name' => 'phone',
-        'mask' => '+7(999)999-99-99'
+        'mask' => '+7(999)999-99-99',
+        'options' => [
+            'placeholder' => 'Введите телефон'
+        ]
     ]) ?>
 
-    <?= $form->field($model, 'captcha')->widget(ReCaptcha2::class)->label(false) ?>
+    <?= $form->field($model, 'captcha', ['template' => "{input}"])->widget(ReCaptcha2::class)->label(false) ?>
 
-    <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
+    <?= Html::submitButton('Отправить', ['class' => 'btn']) ?>
 
-    <?= $form->field($model, 'accept')->checkbox() ?>
+    <?= $form
+        ->field($model, 'accept')
+        ->checkbox(['template' => "{input}\n{hint}\n{beginLabel}{labelTitle}{endLabel}"]); ?>
 
 <?php ActiveForm::end() ?>
 

@@ -50,7 +50,7 @@ return [
             'useFileTransport' => false,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.yandex.ru',
+                'host' => 'smtp.gmail.com',
                 'username' => $params['mailer.senderFrom'],
                 'password' => $params['mailer.senderPassword'],
                 'port' => '587', //465 - 587
@@ -59,6 +59,28 @@ return [
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
+        ],
+        'assetManager' => [
+            'appendTimestamp' => true,
+            'linkAssets' => false,
+            'bundles' => [
+                //TODO: переопределить/определить
+                \yii\bootstrap\BootstrapAsset::class => [
+                    'basePath' => '@webroot',
+                    'baseUrl' => '@web',
+                    'css' => ['css/lib.min.css'],
+                ],
+                /*\yii\bootstrap\BootstrapPluginAsset::class => [
+                    'basePath' => '@webroot',
+                    'baseUrl' => '@web',
+                    'js' => ['js/lib.min.js'],
+                ],*/
+                \yii\web\JqueryAsset::class => [
+                    'basePath' => '@webroot',
+                    'baseUrl' => '@web',
+                    'js' => ['js/lib.min.js'],
+                ],
+            ],
         ],
     ],
     'params' => $params,

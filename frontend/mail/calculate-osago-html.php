@@ -3,7 +3,7 @@
 ?>
 
 <div class="calculate-osago-html">
-    ага
+    <?= \yii\helpers\VarDumper::dump($data->attributes, 20, true) ?>
 </div>
 
 <?php

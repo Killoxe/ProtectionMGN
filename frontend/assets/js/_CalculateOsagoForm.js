@@ -1,7 +1,6 @@
-var $form = $('#calculate-osago-form'),
-    allowSubmit;
+var $calculateOsagoForm = $('body').find('#calculate-osago-form');
 
-$form.on('beforeValidate', function () {
+$calculateOsagoForm.on('beforeValidate', function () {
     var $listEditItems = $('.calculateosagoform-people-list-edit .list-edit__item');
 
     $listEditItems.each(function (i, el) {
@@ -12,33 +11,27 @@ $form.on('beforeValidate', function () {
             $dateBeginExperienceInput = $el.find('.calculateosagoform-date_begin_experience-input');
 
         if (!$dateBirthInput.val()) {
-            $dateBirthInput.parent().parent().addClass('has-error').find('.help-block').text('Необходимо заполнить "Дата рождения"');
+            $dateBirthInput.parent().parent().addClass('has-error');/*.find('.help-block').text('Необходимо заполнить "Дата рождения"');*/
         } else {
-            $dateBirthInput.parent().parent().removeClass('has-error').find('.help-block').text('');
+            $dateBirthInput.parent().parent().removeClass('has-error');/*.find('.help-block').text('');*/
         }
 
         if (!$driverLicenseSeriesInput.val()) {
-            $driverLicenseSeriesInput.parent().addClass('has-error').find('.help-block').text('Необходимо заполнить "Серия водительского удостоверения"');
+            $driverLicenseSeriesInput.parent().addClass('has-error');
         } else {
-            $driverLicenseSeriesInput.parent().removeClass('has-error').find('.help-block').text('');
+            $driverLicenseSeriesInput.parent().removeClass('has-error');
         }
 
         if (!$driverLicenseNumberInput.val()) {
-            $driverLicenseNumberInput.parent().addClass('has-error').find('.help-block').text('Необходимо заполнить "Номер водительского удостоверения"');
+            $driverLicenseNumberInput.parent().addClass('has-error');
         } else {
-            $driverLicenseNumberInput.parent().removeClass('has-error').find('.help-block').text('');
+            $driverLicenseNumberInput.parent().removeClass('has-error');
         }
 
         if (!$dateBeginExperienceInput.val()) {
-            $dateBeginExperienceInput.parent().parent().addClass('has-error').find('.help-block').text('Необходимо заполнить "Дата начала стажа"');
+            $dateBeginExperienceInput.parent().parent().addClass('has-error');
         } else {
-            $dateBeginExperienceInput.parent().parent().removeClass('has-error').find('.help-block').text('');
+            $dateBeginExperienceInput.parent().parent().removeClass('has-error');
         }
     });
-
-    allowSubmit = !$listEditItems.find('.has-error').length;
-});
-
-$form.on('beforeSubmit', function () {
-    return allowSubmit;
 });

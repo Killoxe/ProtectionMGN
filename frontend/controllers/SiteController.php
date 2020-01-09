@@ -7,9 +7,10 @@ use frontend\services\mail\FeedbackSendingMailServiceFactory;
 use frontend\services\mail\CalculateOsagoSendingMailServiceFactory;
 use Yii;
 use yii\base\Module;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
-use frontend\components\AjaxRequestModelValidatorFactory;
 use yii\web\Response;
+use yii\widgets\ActiveForm;
 
 /**
  * Site controller
@@ -33,6 +34,8 @@ class SiteController extends Controller
         $this->calculateOsagoSendingMailServiceFactory = $calculateOsagoSendingMailServiceFactory;
     }
 
+
+
     /**
      * {@inheritdoc}
      */
@@ -44,7 +47,7 @@ class SiteController extends Controller
             ],
             'captcha' => [
                 'class' => 'yii\captcha\CaptchaAction'
-            ]
+            ],
         ];
     }
 
@@ -52,17 +55,17 @@ class SiteController extends Controller
     {
         $feedbackFormModel = new FeedbackForm();
         $feedbackFormModel->scenario = FeedbackForm::SCENARIO_CREATE;
-        $feedbackFormModel->name = 'ser';
+        /*$feedbackFormModel->name = 'ser';
         $feedbackFormModel->surname = 'ter';
         $feedbackFormModel->patronymic = 'dmit';
         $feedbackFormModel->email = 'boi@next.door';
         $feedbackFormModel->phone = '+7(800)555-35-35';
         $feedbackFormModel->insurance = 0;
         $feedbackFormModel->message = 'кхъ';
-        $feedbackFormModel->accept = true;
+        $feedbackFormModel->accept = true;*/
 
         $calculateOsagoFormModel = new CalculateOsagoForm();
-        $calculateOsagoFormModel->scenario = CalculateOsagoForm::SCENARIO_CREATE;
+       /* $calculateOsagoFormModel->scenario = CalculateOsagoForm::SCENARIO_CREATE;
         $calculateOsagoFormModel->name = 'ser';
         $calculateOsagoFormModel->surname = 'ter';
         $calculateOsagoFormModel->patronymic = 'dmit';
@@ -70,51 +73,83 @@ class SiteController extends Controller
         $calculateOsagoFormModel->registration = 0;
         $calculateOsagoFormModel->email = 'boi@next.door';
         $calculateOsagoFormModel->phone = '+7(800)555-35-35';
-        $calculateOsagoFormModel->accept = true;
-
-        $request = Yii::$app->request;
-        if($request->getIsAjax()) {
-
-            //TODO: почему-то не приходит алерт от осаго формы
-
-            if ($request->post('CalculateOsagoForm')) {
-                Yii::$app->response->format = Response::FORMAT_JSON;
-
-                if ($calculateOsagoFormModel->load($request->post()) && $calculateOsagoFormModel->validate()) {
-                    \yii\helpers\VarDumper::dump($calculateOsagoFormModel->attributes,20,true);
-                    /*if ($this->calculateOsagoSendingMailServiceFactory->get()->send($calculateOsagoFormModel)) {
-                        $calculateOsagoFormModel = new CalculateOsagoForm();
-                        $calculateOsagoFormModel->scenario = CalculateOsagoForm::SCENARIO_CREATE;
-                        Yii::$app->session->setFlash('success', 'отправили');
-                    } else {
-                        Yii::$app->session->setFlash('danger', 'ошибка отправки почты');
-                    }*/
-                } else {
-                    Yii::$app->session->setFlash('danger', 'ошибка валидации');
-                }
-
-            }
-
-            if ($request->post('FeedbackForm')) {
-                Yii::$app->response->format = Response::FORMAT_JSON;
-                if ($feedbackFormModel->load($request->post()) && $feedbackFormModel->validate()) {
-                    if ($this->feedbackSendingMailServiceFactory->get()->send($feedbackFormModel)) {
-                        $feedbackFormModel = new FeedbackForm();
-                        $feedbackFormModel->scenario = FeedbackForm::SCENARIO_CREATE;
-                        Yii::$app->session->setFlash('success', 'отправили');
-                    } else {
-                        Yii::$app->session->setFlash('danger', 'ошибка отправки почты');
-                    }
-                } else {
-                    Yii::$app->session->setFlash('danger', 'ошибка валидации');
-                }
-                //\yii\helpers\VarDumper::dump($request->post(), 20, true);
-            }
-        }
+        $calculateOsagoFormModel->accept = true;*/
 
         return $this->render('index', [
             'feedbackFormModel' => $feedbackFormModel,
             'calculateOsagoFormModel' => $calculateOsagoFormModel
         ]);
+    }
+
+    public function actionFeedbackForm()
+    {
+        $model = new FeedbackForm();
+        $model->scenario = FeedbackForm::SCENARIO_CREATE;
+
+        $request = Yii::$app->request;
+        if ($request->getIsAjax() && $model->load($request->post())) {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+
+            if ($this->feedbackSendingMailServiceFactory->get()->send($model)) {
+                $model = new FeedbackForm();
+                $model->scenario = FeedbackForm::SCENARIO_CREATE;
+                Yii::$app->session->setFlash('success', 'Обращение успешно отправлено');
+            } else {
+                Yii::$app->session->setFlash('error', 'Ошибка отправки обращения');
+            }
+        }
+
+        return $this->render('_FeedbackForm', ['model' => $model]);
+    }
+
+    public function actionFeedbackFormValidation()
+    {
+        $request = Yii::$app->request;
+        if ($request->getIsAjax()) {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+
+            $model = new FeedbackForm();
+            $model->scenario = FeedbackForm::SCENARIO_CREATE;
+
+            if ($model->load($request->post())) {
+                return ActiveForm::validate($model);
+            }
+        }
+    }
+
+    public function actionCalculateOsagoForm()
+    {
+        $model = new CalculateOsagoForm();
+        $model->scenario = CalculateOsagoForm::SCENARIO_CREATE;
+
+        $request = Yii::$app->request;
+        if ($request->getIsAjax() && $model->load($request->post())) {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+
+            if ($this->calculateOsagoSendingMailServiceFactory->get()->send($model)) {
+                $model = new CalculateOsagoForm();
+                $model->scenario = CalculateOsagoForm::SCENARIO_CREATE;
+                Yii::$app->session->setFlash('success', 'Заявка успешно отправлена');
+            } else {
+                Yii::$app->session->setFlash('error', 'Ошибка отправки заявки');
+            }
+        }
+
+        return $this->render('_CalculateOsagoForm', ['model' => $model]);
+    }
+
+    public function actionCalculateOsagoFormValidation()
+    {
+        $request = Yii::$app->request;
+        if ($request->getIsAjax()) {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+
+            $model = new CalculateOsagoForm();
+            $model->scenario = CalculateOsagoForm::SCENARIO_CREATE;
+
+            if ($model->load($request->post())) {
+                return ActiveForm::validate($model);
+            }
+        }
     }
 }

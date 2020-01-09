@@ -10,19 +10,24 @@ class FeedbackSendingMailService extends BaseObject
 
     //TODO: это
 
-    public $view = 'test-html';
+    public $view = 'calculate-osago-html';
 
     public $data;
 
+    protected function buildData($model)
+    {
+        return $model;
+    }
+
     public function send($model)
     {
-        /*
-        $message = Yii::$app->mailer->compose($this->view, ['data' => ['mail' => $model->mail, 'text' => $model->text]])
+
+        $message = Yii::$app->mailer->compose($this->view, ['data' => $this->buildData($model)])
             ->setTo(Yii::$app->params['mailer.sendTo'])
             ->setFrom(Yii::$app->params['mailer.senderFrom'])
-            ->setSubject('test');
-        */
+            ->setSubject('Обратная связь');
 
-        return true; //$message->send();
+
+        return $message->send();
     }
 }

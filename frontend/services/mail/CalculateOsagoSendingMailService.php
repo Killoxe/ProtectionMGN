@@ -21,7 +21,7 @@ class CalculateOsagoSendingMailService extends BaseObject
 
     public function send($model)
     {
-        $message = Yii::$app->mailer->compose($this->view, ['data' => ''])
+        $message = Yii::$app->mailer->compose($this->view, ['data' => $this->buildData($model)])
             ->setTo(Yii::$app->params['mailer.sendTo'])
             ->setFrom(Yii::$app->params['mailer.senderFrom'])
             ->setSubject('Завявка на ОСАГО');
