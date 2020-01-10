@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
 	<head>
+		<link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+		<link rel="manifest" href="../img/favicon/site.webmanifest">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -14,9 +21,14 @@
 	<body id="slider">
 		<header class="header container">
 			<div class="row header__wrap">
-				<div>
+				<div class="header__burger">
+					<div class="header__btn" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
 					<img src="../img/logo.svg" alt="">
-					<menu>
+					<menu class="collapse" id="navbarSupportedContent">
 						<a class="null" href="#slider">Главная</a>
 						<a class="null" href="#catalog">Виды страхования</a>
 						<a class="null" href="#map">Мы в регионе</a>
@@ -28,7 +40,8 @@
 					<img src="../img/envelope.svg" alt=""><a href="mailto:89090950666@bk.ru">89090950666@bk.ru</a>
 				</div>
 			</div>
-			<div class="header__burger row">
+
+			<!-- <div class="header__burger row">
 				<div class="header__btn" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 					<div></div>
 					<div></div>
@@ -49,7 +62,8 @@
 						<img src="../img/envelope.svg" alt=""><a href="mailto:89090950666@bk.ru">89090950666@bk.ru</a>
 					</div>
 				</div>
-			</div>
+			</div> -->
+
 		</header>
 		<div class="container">
 			<div class="row slider tb3in5">
@@ -61,8 +75,8 @@
 							<div class="slide">
 								<div class="slide__wrap">
 									<div class="swiper-pagination"></div>
-									<div class="h1">Заголовок банера</div>
-									<h4>Таким образом консультация с широким активом в значительной степени обуславливает создание систем массового участия.</h4>
+									<div class="h1">Январь!</div>
+									<h4>Не бывалые скидки и подарки! При оформлении любого вида страхования!!</h4>
 									<a href="#">Подробнее</a>
 								</div>
 							</div>
@@ -76,8 +90,8 @@
 							<div class="slide">
 								<div class="slide__wrap">
 									<div class="swiper-pagination"></div>
-									<div class="h1">Заголовок банера</div>
-									<h4>Таким образом консультация с широким активом в значительной степени обуславливает создание систем массового участия.</h4>
+									<div class="h1">Подарки к ОСАГО</div>
+									<h4></h4>
 									<a href="#">Подробнее</a>
 								</div>
 							</div>

@@ -1,10 +1,10 @@
 $(document).ready(function () {
     var swiper = new Swiper('.slider__wrap', {
         loop: true,
-        autoplay: {
-            delay: 6000,
-            disableOnInteraction: false,
-        },
+        // autoplay: {
+        //     delay: 6000,
+        //     disableOnInteraction: false,
+        // },
         speed: 1500,
         spaceBetween: 50,
         pagination: {
@@ -24,16 +24,16 @@ $(document).ready(function () {
     var swiper = new Swiper('.aboutUs__slider', {
         slidesPerView: 1,
         spaceBetween: 10,
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
+        // autoplay: {
+        //     delay: 3000,
+        //     disableOnInteraction: false,
+        // },
         loop: true,
         breakpoints: {
             1601: {
                 slidesPerView: 5,
             },
-            1367: {
+            1281: {
                 slidesPerView: 4,
             },
             769: {
