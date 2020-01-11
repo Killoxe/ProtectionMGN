@@ -3,3 +3,12 @@
     margin-top: 10px;
   }
 }
+
+.select2-results__option {
+  &:nth-of-type(1),
+  &:nth-of-type(7) {
+    & > strong {
+      font-size: 19px;
+    }
+  }
+}

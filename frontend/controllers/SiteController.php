@@ -35,7 +35,6 @@ class SiteController extends Controller
     }
 
 
-
     /**
      * {@inheritdoc}
      */
@@ -45,9 +44,6 @@ class SiteController extends Controller
             'error' => [
                 'class' => 'yii\web\ErrorAction',
             ],
-            'captcha' => [
-                'class' => 'yii\captcha\CaptchaAction'
-            ],
         ];
     }
 
@@ -55,25 +51,9 @@ class SiteController extends Controller
     {
         $feedbackFormModel = new FeedbackForm();
         $feedbackFormModel->scenario = FeedbackForm::SCENARIO_CREATE;
-        /*$feedbackFormModel->name = 'ser';
-        $feedbackFormModel->surname = 'ter';
-        $feedbackFormModel->patronymic = 'dmit';
-        $feedbackFormModel->email = 'boi@next.door';
-        $feedbackFormModel->phone = '+7(800)555-35-35';
-        $feedbackFormModel->insurance = 0;
-        $feedbackFormModel->message = 'кхъ';
-        $feedbackFormModel->accept = true;*/
 
         $calculateOsagoFormModel = new CalculateOsagoForm();
-       /* $calculateOsagoFormModel->scenario = CalculateOsagoForm::SCENARIO_CREATE;
-        $calculateOsagoFormModel->name = 'ser';
-        $calculateOsagoFormModel->surname = 'ter';
-        $calculateOsagoFormModel->patronymic = 'dmit';
-        $calculateOsagoFormModel->horse_power = 3;
-        $calculateOsagoFormModel->registration = 0;
-        $calculateOsagoFormModel->email = 'boi@next.door';
-        $calculateOsagoFormModel->phone = '+7(800)555-35-35';
-        $calculateOsagoFormModel->accept = true;*/
+        $calculateOsagoFormModel->scenario = CalculateOsagoForm::SCENARIO_CREATE;
 
         return $this->render('index', [
             'feedbackFormModel' => $feedbackFormModel,

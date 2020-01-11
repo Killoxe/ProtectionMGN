@@ -51,7 +51,7 @@ use frontend\models\staticLists\InsuranceType;
     ]) ?>
 
     <?= $form->field($model, 'insurance')->widget(Select2::class, [
-        'data' => InsuranceType::getList(),
+        'data' => InsuranceType::getToSelect2(),
         'options' => [
             'placeholder' => 'Выберите вид страхования',
         ],

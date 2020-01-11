@@ -34,7 +34,6 @@ class CalculateOsagoForm extends Model
     public $phone;
     public $people = [];
     public $peopleValid;
-    public $driver_license_series;
     public $date_end_insurance_policy;
     public $horse_power;
     public $registration;
