@@ -1,11 +1,11 @@
 <?php
 namespace frontend\services\mail;
 
-use frontend\models\forms\CalculateOsagoForm;
 use Yii;
 use yii\base\BaseObject;
 use frontend\models\staticLists\HorsePower;
 use frontend\models\staticLists\Registration;
+use frontend\models\forms\CalculateOsagoForm;
 
 /**
  * Class CalculateOsagoSendingMailService

@@ -7,7 +7,6 @@ use frontend\models\staticLists\InsuranceType;
 use Yii;
 use frontend\models\forms\FeedbackForm;
 use yii\base\BaseObject;
-use yii\helpers\ArrayHelper;
 
 class FeedbackSendingMailService extends BaseObject
 {

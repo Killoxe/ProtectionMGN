@@ -15,51 +15,51 @@ class InsuranceType extends StaticList
     const PRODLENIE = 2;
 
     const HOUSING = 'Жилье';
-    const APARTMENT = 4;
-    const HOUSE = 5;
-    const MORTGAGE = 6;
-    const CIVIL_RESPONSIBILITY = 7;
+    const APARTMENT = 3;
+    const HOUSE = 4;
+    const MORTGAGE = 5;
+    const CIVIL_RESPONSIBILITY = 6;
 
     const TRAVELS = 'Путешествия';
-    const VZR = 8;
-    const FROM_RECOGNIZANCE = 9;
+    const VZR = 7;
+    const FROM_RECOGNIZANCE = 8;
 
     const HEALTH = 'Здоровье';
-    const MITE = 10;
-    const NS = 11;
-    const DMS = 12;
+    const MITE = 9;
+    const NS = 10;
+    const DMS = 11;
 
     const TOURS = 'Туры';
-    const ABROAD = 13;
-    const IN_RUSSIA = 14;
+    const ABROAD = 12;
+    const IN_RUSSIA = 13;
 
     const CARGO = 'Грузы';
-    const AUTO = 15;
-    const TRAIN = 16;
-    const SHIPPING = 17;
+    const AUTO = 14;
+    const TRAIN = 15;
+    const SHIPPING = 16;
 
     const PROPERTY_OF_LEGAL_ENTITIES = 'Имущество Юр. лиц';
-    const BUILDING = 18;
-    const EQUIPMENT = 19;
-    const OFFICE = 20;
-    const OFFICE_EQUIPMENT = 21;
-    const PRODUCTS = 22;
-    const GOODS = 23;
-    const RAW_MATERIALS = 24;
+    const BUILDING = 17;
+    const EQUIPMENT = 18;
+    const OFFICE = 19;
+    const OFFICE_EQUIPMENT = 20;
+    const PRODUCTS = 21;
+    const GOODS = 22;
+    const RAW_MATERIALS = 23;
 
     const OPO = 'ОПО';
-    const GAS_STATIONS = 25;
-    const ELEVATORS = 26;
-    const ESCALATORS = 27;
+    const GAS_STATIONS = 24;
+    const ELEVATORS = 25;
+    const ESCALATORS = 26;
 
     const GO = 'ГО';
-    const NON_RESIDENTIAL_PROPERTY_OWNERS = 28;
-    const EVENT_ORGANIZERS = 29;
-    const CAR_PARKS = 30;
-    const OWNERS_OF_TEMPORARY_STORAGE_WAREHOUSES = 31;
+    const NON_RESIDENTIAL_PROPERTY_OWNERS = 27;
+    const EVENT_ORGANIZERS = 28;
+    const CAR_PARKS = 29;
+    const OWNERS_OF_TEMPORARY_STORAGE_WAREHOUSES = 30;
 
     const AUTO_AND_SPECIAL_AUTO = 'Авто и спецтехника';
-    const ALL_KINDS = 32;
+    const ALL_KINDS = 31;
 
     public static function getArray()
     {
@@ -119,11 +119,11 @@ class InsuranceType extends StaticList
 
     public static function getFullPath($id)
     {
-        $array = static::getArray();
+        $item = static::getArray()[$id];
         $path = [
-            $array[$id]['id'] > 14 ? self::FOR_UR_LIC : self::FOR_FIZ_LIC,
-            $array[$id]['group'],
-            $array[$id]['name']
+            $item['id'] > 14 ? self::FOR_UR_LIC : self::FOR_FIZ_LIC,
+            $item['group'],
+            $item['name']
         ];
 
         return implode(' > ', $path);
