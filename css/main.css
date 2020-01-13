@@ -439,7 +439,7 @@ ul li::after {
 .header .collapsing {
   display: none;
 }
-@media (max-width: 480px) {
+@media (max-width: 1024px) {
   .header.container-fluid {
     padding: 0 !important;
   }
@@ -479,12 +479,6 @@ ul li::after {
 @media (max-width: 1024px) {
   .slider .swiper-button-next,
   .slider .swiper-button-prev {
-    left: 0;
-  }
-}
-@media (max-width: 768px) {
-  .slider .swiper-button-next,
-  .slider .swiper-button-prev {
     display: none;
   }
 }
@@ -497,22 +491,12 @@ ul li::after {
     right: 10px;
   }
 }
-@media (max-width: 1024px) {
-  .slider .swiper-button-next {
-    right: 0;
-  }
-}
 @media (max-width: 1366px) {
   .slider .swiper-slide {
     padding: 0 50px;
   }
 }
 @media (max-width: 1024px) {
-  .slider .swiper-slide {
-    padding: 0 40px;
-  }
-}
-@media (max-width: 768px) {
   .slider .swiper-slide {
     padding: 0;
   }
@@ -533,15 +517,15 @@ ul li::after {
 }
 @media (max-width: 1024px) {
   .slide {
-    width: 309px;
+    top: 0;
+    width: 40%;
+    height: 100%;
   }
 }
 @media (max-width: 768px) {
   .slide {
     position: relative;
     width: 100%;
-    height: auto;
-    top: 0;
   }
 }
 .slide__wrap {
@@ -583,6 +567,9 @@ ul li::after {
 .slide__wrap .h1 {
   margin-bottom: 20px;
 }
+.slide__wrap .h1::after {
+  background-color: #00509e;
+}
 .slide__wrap h4 {
   opacity: 0.8;
   font-weight: 100 !important;
@@ -610,6 +597,11 @@ ul li::after {
   max-width: 67%;
   z-index: 0;
   margin: 0 0 0 auto;
+}
+@media (max-width: 1024px) {
+  .slide__img {
+    max-width: 60%;
+  }
 }
 @media (max-width: 768px) {
   .slide__img {
@@ -891,11 +883,27 @@ ul li::after {
   position: relative;
   left: 50%;
 }
+@media (max-width: 480px) {
+  .contacts__card > a {
+    left: 0;
+  }
+}
 .contacts__date {
   display: table-cell;
 }
+@media (max-width: 768px) {
+  .contacts__date {
+    margin-bottom: 10px;
+    display: block;
+  }
+}
 .contacts__phone {
   display: table-cell;
+}
+@media (max-width: 768px) {
+  .contacts__phone {
+    display: block;
+  }
 }
 .contacts__phone a {
   margin: auto !important;
@@ -914,6 +922,16 @@ ul li::after {
 }
 .contacts__info {
   margin-bottom: 15px;
+}
+@media (max-width: 768px) {
+  .contacts__info {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 480px) {
+  .contacts__info {
+    margin-bottom: 15px;
+  }
 }
 .aboutUs {
   grid-template-areas: ". te te te ." "sld sld sld sld sld";
@@ -1146,19 +1164,6 @@ footer .container div a:not(:last-child) {
     width: 90%;
   }
 }
-.modalText__wrap .close {
-  text-shadow: none;
-  color: #0c1824;
-  font-size: 27px;
-  position: absolute;
-  z-index: 7;
-  top: 11px;
-  right: 11px;
-  width: 30px;
-  height: 30px;
-  background-color: rgba(255, 255, 255, 0.7) !important;
-  border-radius: 50%;
-}
 .modalText__img {
   position: relative;
   height: 192px;
@@ -1210,6 +1215,21 @@ footer .container div a:not(:last-child) {
 }
 #modalTur .modalText__img {
   background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/tours.png);
+}
+#modalGr .modalText__img {
+  background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/cargo.png);
+}
+#modalIm .modalText__img {
+  background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/specialMachinery.png);
+}
+#modalOPO .modalText__img {
+  background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/cargo.png);
+}
+#modalGO .modalText__img {
+  background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/festival.png);
+}
+#modalDMS .modalText__img {
+  background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/company.png);
 }
 .collap__card {
   border: 2px solid #00509e;
@@ -1263,6 +1283,22 @@ footer .container div a:not(:last-child) {
 .collap__header div.collapsed::after {
   transform: rotate(90deg);
 }
+.collap__text p:last-child {
+  margin-bottom: 0;
+}
+.close {
+  text-shadow: none;
+  color: #0c1824;
+  font-size: 27px;
+  position: absolute;
+  z-index: 7;
+  top: 11px;
+  right: 11px;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  border-radius: 50%;
+}
 .modalForm {
   position: fixed !important;
   background-color: rgba(12, 24, 36, 0.5);
@@ -1294,4 +1330,21 @@ footer .container div a:not(:last-child) {
   left: 0;
   right: 0;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+}
+.modalDiscount__text {
+  padding: 30px 20px 20px 20px;
+}
+.modalDiscount__text .btnn {
+  margin: 40px auto 0 auto;
+}
+@media (max-width: 1024px) {
+  .modalDiscount__text .btnn {
+    margin: 20px auto 0 auto;
+  }
+}
+.modalDiscount ul {
+  margin: 0 0 0 20px;
+}
+.modalDiscount ul li::after {
+  left: -20px;
 }

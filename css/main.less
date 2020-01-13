@@ -471,7 +471,7 @@ ul {
 	}
 	&.container-fluid {
 
-		@media @bigPhone {
+		@media @laptop {
 			padding: 0 !important;
 		}
 	}
@@ -506,9 +506,6 @@ ul {
 			right: auto;
 		}
 		@media @laptop {
-			left: 0;
-		}
-		@media @smallLaptop {
 			display: none;
 		}
 	}
@@ -519,9 +516,6 @@ ul {
 			left: auto;
 			right: 10px;
 		}
-		@media @laptop {
-			right: 0;
-		}
 	}
 
 	.swiper-slide {
@@ -530,9 +524,6 @@ ul {
 			padding: 0 50px;
 		}
 		@media @laptop {
-			padding: 0 40px;
-		}
-		@media @smallLaptop {
 			padding: 0;
 		}
 	}
@@ -550,13 +541,13 @@ ul {
 		top: 42px;
 	}
 	@media @laptop {
-		width: 309px;
+		top: 0;
+		width: 40%;
+		height: 100%;
 	}
 	@media @smallLaptop {
 		position: relative;
 		width: 100%;
-		height: auto;
-		top: 0;
 	}
 
 	&__wrap {
@@ -592,6 +583,10 @@ ul {
 		}
 		.h1 {
 			margin-bottom: 20px;
+
+			&::after {
+				background-color: @mainC;
+			}
 		}
 		h4 {
 			opacity: 0.8;
@@ -622,6 +617,9 @@ ul {
 		z-index: 0;
 		margin: 0 0 0 auto;
 
+		@media @laptop {
+			max-width: 60%;
+		}
 		@media @smallLaptop {
 			display: none;
 		}
@@ -903,15 +901,27 @@ ul {
 		}
 		> a {
 			position: relative;
-    		left: 50%;
+			left: 50%;
+			
+			@media @bigPhone {
+				left: 0;
+			}
 		}
 	}
 	&__date {
 		display: table-cell;
+
+		@media @smallLaptop {
+			margin-bottom: 10px;
+			display: block;
+		}
 	}
 	&__phone {
 		display: table-cell;
 
+		@media @smallLaptop {
+			display: block;
+		}
 		a {
 			margin: auto !important;
 
@@ -931,6 +941,13 @@ ul {
 	}
 	&__info {
 		margin-bottom: 15px;
+
+		@media @smallLaptop {
+			margin-bottom: 0;
+		}
+		@media @bigPhone {
+			margin-bottom: 15px;
+		}
 	}
 }
 .aboutUs {
@@ -1157,20 +1174,6 @@ footer {
 		@media @smallLaptop {
 			width: 90%;
 		}
-
-		.close {
-			text-shadow: none;
-			color: @textC;
-			font-size: 27px;
-			position: absolute;
-			z-index: 7;
-			top: 11px;
-			right: 11px;
-			width: 30px;
-			height: 30px;
-			background-color: rgba(255, 255, 255, 0.7) !important;
-			border-radius: 50%;
-		}
 	}
 	&__img {
 		position: relative;
@@ -1223,6 +1226,22 @@ footer {
 }
 #modalTur .modalText__img {
 	background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/tours.png);
+}
+
+#modalGr .modalText__img {
+	background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/cargo.png);
+}
+#modalIm .modalText__img {
+	background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/specialMachinery.png);
+}
+#modalOPO .modalText__img {
+	background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/cargo.png);
+}
+#modalGO .modalText__img {
+	background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/festival.png);
+}
+#modalDMS .modalText__img {
+	background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/company.png);
 }
 
 .collap {
@@ -1282,7 +1301,27 @@ footer {
 			}
 		}
 	}
+	&__text {
+
+		p:last-child{
+			margin-bottom: 0;
+		}
+	}
 }
+.close {
+	text-shadow: none;
+	color: @textC;
+	font-size: 27px;
+	position: absolute;
+	z-index: 7;
+	top: 11px;
+	right: 11px;
+	width: 30px;
+	height: 30px;
+	background-color: rgba(255, 255, 255, 0.7) !important;
+	border-radius: 50%;
+}
+
 .modalForm {
 	position: fixed !important;
 	background-color: rgba(12, 24, 36, 0.5);
@@ -1315,6 +1354,24 @@ footer {
 		left: 0;
 		right: 0;
 		box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+	}
+	&__text {
+		padding: 30px 20px 20px 20px;
+
+		.btnn {
+			margin: 40px auto 0 auto;
+
+			@media @laptop {
+				margin: 20px auto 0 auto;
+			}
+		}
+	}
+	ul {
+		margin: 0 0 0 20px;
+
+		li::after {
+			left: -20px;
+		}
 	}
 }
 // lessc main.less main.css
