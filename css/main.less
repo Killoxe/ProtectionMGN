@@ -39,7 +39,7 @@ h1,
 	font-family: 'Oswald', sans-serif !important;
 	font-size: 48px !important;
 	font-weight: 700 !important;
-	line-height: 65px !important;
+	line-height: normal;
 	position: relative;
 	padding-top: 15px;
 	text-transform: uppercase;
@@ -62,7 +62,7 @@ h2,
 .h2 {
 	font-weight: 300 !important;
 	font-size: 36px !important;
-	line-height: 40px !important;
+	line-height: normal;
 
 	@media @laptop {
 		font-size: 30px !important;
@@ -71,7 +71,7 @@ h2,
 h3 {
 	font-weight: 300 !important;
 	font-size: 24px !important;
-	line-height: 27px !important;
+	line-height: normal;
 
 	@media @laptop {
 		font-size: 20px !important;
@@ -80,7 +80,7 @@ h3 {
 h4 {
 	font-weight: bold !important;
 	font-size: 18px !important;
-	line-height: 20px !important;
+	line-height: normal;
 
 	@media @laptop {
 		font-size: 16px !important;
@@ -109,6 +109,35 @@ a {
 		content: none;
 	}
 }
+ul {
+	li {
+		position: relative;
+		margin-bottom: 20px;
+		list-style-type: none;
+
+		@media @smallLaptop {
+			margin-bottom: 15px;
+		}
+
+		h4 {
+			margin-bottom: 5px;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			left: -50px;
+			top: 4px;
+			width: 10px;
+			height: 10px;
+			background-color: @yellow;
+			transform: rotate(45deg);
+
+			@media @smallLaptop {
+				left: -20px;
+			}
+		}
+	}
+}
 ::-webkit-scrollbar {
 	width: 10px;
 }
@@ -135,7 +164,7 @@ a {
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 100%;
+		height: 101%;
 		background: @yellow;
 		transition: 300ms;
 		z-index: 0;
@@ -204,6 +233,9 @@ a {
 
 	@media @laptop {
 		padding: 0 40px !important;
+	}
+	@media @bigPhone {
+		padding: 0 25px !important;
 	}
 }
 
@@ -279,10 +311,22 @@ a {
 		@media @laptop {
 			font-size: 16px;
 		}
+		@media @bigPhone {
+			display: none !important;
+		}
 		
 		img {
 			margin-right: 5px;
 			margin-left: 18px;
+
+			@media @smallLaptop {
+				display: none;
+			}
+		}
+		a {
+			@media @smallLaptop {
+				margin-left: 10px;
+			}
 		}
 	}
 	&__burger {
@@ -308,6 +352,8 @@ a {
 				}
 				@media @laptop {
 					font-size: 16px;
+					display: block !important;
+    				margin-bottom: 5px;
 				}
 				
 				&:hover {
@@ -378,6 +424,10 @@ a {
 				}
 				menu {
 					margin-left: 0;
+
+					a:hover {
+						color: @blue !important;
+					}
 				}
 			}
 		}
@@ -391,7 +441,7 @@ a {
 			left: 0;
 			top: 50px;
 			right: 0;
-			padding: 10px 30px;
+			padding: 20px 10px;
 		}
 		&:not(.show) {
 			display: block;
@@ -400,14 +450,30 @@ a {
 				display: none;
 			}
 		}
+		.header__contacts {
+			display: none;
+
+			@media @bigPhone {
+				display: inline-block !important;
+			}
+
+			img {
+				display: inline;
+				margin: 0 5px 10px 0;
+			}
+			a {
+				display: inline-block !important;
+			}
+		}
 	}
 	.collapsing {
-		position: absolute;
-		background-color: rgba(12, 24, 36, 0.8);
-		left: 0;
-		top: 50px;
-		right: 0;
-		padding: 10px 30px;
+		display: none;
+	}
+	&.container-fluid {
+
+		@media @bigPhone {
+			padding: 0 !important;
+		}
 	}
 }
 
@@ -488,7 +554,7 @@ a {
 	}
 	@media @smallLaptop {
 		position: relative;
-		width: auto;
+		width: 100%;
 		height: auto;
 		top: 0;
 	}
@@ -523,6 +589,9 @@ a {
 				font-size: 80px;
 				line-height: 75px;
 			}
+		}
+		.h1 {
+			margin-bottom: 20px;
 		}
 		h4 {
 			opacity: 0.8;
@@ -611,7 +680,7 @@ a {
 		margin-top: 20px;
 
 		&--first {
-	 		 grid-area: stc1;
+	 		grid-area: stc1;
 
 			&.tb5in5 {
 				grid-gap: 10px;
@@ -627,6 +696,10 @@ a {
 				@media @smallLaptop {
 					grid-template-areas: "st st";
 					grid-template-columns: repeat(2, 1fr);
+				}
+				@media @bigPhone {
+					grid-template-areas: "st";
+					grid-template-columns: repeat(1, 1fr);
 				}
 			}
 		}
@@ -648,6 +721,10 @@ a {
 				@media @smallLaptop {
 					grid-template-areas: "st st";
 					grid-template-columns: repeat(2, 1fr);
+				}
+				@media @bigPhone {
+					grid-template-areas: "st";
+					grid-template-columns: repeat(1, 1fr);
 				}
 			}
 		}
@@ -954,137 +1031,116 @@ a {
 			}
 		}
 	}
-
-	ul {
-		li {
-			position: relative;
-			margin-bottom: 20px;
-			list-style-type: none;
-
-			@media @smallLaptop {
-				margin-bottom: 15px;
-			}
-
-			h4 {
-				margin-bottom: 5px;
-			}
-			&::after {
-				content: "";
-				position: absolute;
-				left: -50px;
-    			top: 4px;
-				width: 10px;
-				height: 10px;
-				background-color: @yellow;
-				transform: rotate(45deg);
-
-				@media @smallLaptop {
-					left: -20px;
-				}
-			}
-		}
-	}
 }
 
 footer {
 	background-color: @textC;
-	height: 318px;
-	text-align: center;
-	display: inline-block !important;
 
-	@media @laptop {
-		height: auto;
-	}
+	.container {
+		height: 318px;
+		text-align: center;
+		padding: 50px 0 20px 0 !important;
 	
-	> a {
-		color: white !important;
-		font-size: 36px;
-		// margin-bottom: 11px;
-
 		@media @laptop {
-			font-size: 28px;
+			height: auto;
 		}
-
-		&::after {
-			background-color: white;
-		}
-	}
-	h3 {
-		color: white;
-		margin: 50px 0 20px;
-
 		@media @smallLaptop {
-			margin: 20px 0 15px;
+			padding: 20px 0 20px 0 !important;
 		}
-	}
-	div {
-		display: flex;
-		margin-top: 50px;
-
-		@media @laptop {
+		
+		> a {
+			color: white !important;
+			font-size: 36px;
+	
+			@media @laptop {
+				font-size: 28px;
+			}
+			@media @bigPhone {
+				font-size: 22px;
+			}
+	
+			&::after {
+				background-color: white;
+			}
+		}
+		h3 {
+			color: white;
 			margin-bottom: 20px;
-		}
-		@media @smallLaptop {
-			margin-top: 20px;
-		}
-
-		&::after,
-		&::before {
-			content: '';
-			position: relative;
-			width: 100%;
-			height: 2px;
-			background-color: white;
-			top: 20px;
-
+	
 			@media @smallLaptop {
-				top: 15px;
+				margin-bottom: 15px;
 			}
 		}
-		&::after {
-			margin-left: 20px;
-
+		div {
+			display: flex;
+			margin-top: 50px;
+	
 			@media @smallLaptop {
-				margin-left: 15px;
+				margin-top: 20px;
 			}
-		}
-		&::before {
-			margin-right: 20px;
-
-			@media @smallLaptop {
-				margin-right: 15px;
-			}
-		}
-
-		a {
-			opacity: .6;
-			transition: 300ms;
-
-			img {
-
+	
+			&::after,
+			&::before {
+				content: '';
+				position: relative;
+				width: 100%;
+				height: 2px;
+				background-color: white;
+				top: 20px;
+	
 				@media @smallLaptop {
-					height: 30px;
+					top: 15px;
 				}
 			}
-
-			&:hover {
-				opacity: 1;
+			&::after {
+				margin-left: 20px;
+	
+				@media @smallLaptop {
+					margin-left: 15px;
+				}
+				@media @bigPhone {
+					margin-left: 10px;
+				}
 			}
-			&:not(:last-child) {
-				margin-right: 15px;
+			&::before {
+				margin-right: 20px;
+	
+				@media @smallLaptop {
+					margin-right: 15px;
+				}
+				@media @bigPhone {
+					margin-right: 10px;
+				}
+			}
+	
+			a {
+				opacity: .6;
+				transition: 300ms;
+	
+				img {
+	
+					@media @smallLaptop {
+						height: 30px;
+					}
+				}
+	
+				&:hover {
+					opacity: 1;
+				}
+				&:not(:last-child) {
+					margin-right: 15px;
+	
+					@media @bigPhone {
+						margin-right: 10px;
+					}
+				}
 			}
 		}
 	}
 }
 
 .modalText {
-	// position: fixed;
-	// top: 0;
-	// left: 0;
-	// right: 0;
-	// bottom: 0;
 	background-color: rgba(12, 24, 36, 0.5);
-	// z-index: 6;
 
 	&__wrap {
 		position: absolute;
@@ -1118,7 +1174,6 @@ footer {
 	}
 	&__img {
 		position: relative;
-		background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/Rectangle58.png);
 		height: 192px;
 		width: 100%;
 
@@ -1126,16 +1181,50 @@ footer {
 			position: absolute;
 			bottom: 0;
 			left: 30px;
+
+			@media @bigPhone {
+				left: 10px;
+			}
 		}
 	}
 	&__top {
 		margin: 20px 30px 30px 30px;
 
+		@media @bigPhone {
+			margin: 10px;
+		}
 		.btnn {
 			margin: 40px auto 0 auto;
+
+			@media @laptop {
+				margin: 20px auto 0 auto;
+			}
+		}
+	}
+	ul {
+		margin: 0 0 0 20px;
+
+		li::after {
+			left: -20px;
 		}
 	}
 }
+#modalCar .modalText__img {
+	background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/Rectangle58.png);
+}
+#modalHome .modalText__img {
+	background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/home1.png);
+}
+#modalTr .modalText__img {
+	background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/traveler.png);
+}
+#modalHel .modalText__img {
+	background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/home1.png);
+}
+#modalTur .modalText__img {
+	background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/tours.png);
+}
+
 .collap {
 
 	&__card {
@@ -1143,6 +1232,10 @@ footer {
 		border-radius: 2px;
 		padding: 12px;
 		margin-bottom: 15px;
+
+		@media @bigPhone {
+			padding: 8px;
+		}
 
 		.collapse {
 			margin-top: 15px;
@@ -1170,6 +1263,10 @@ footer {
 				right: 0;
 				transform: rotate(45deg);
 				transition: 300ms;
+
+				@media @bigPhone {
+					top: 9px;
+				}
 			}
 			&::after {
 				transform: rotate(135deg);
@@ -1188,12 +1285,24 @@ footer {
 }
 .modalForm {
 	position: fixed !important;
-	// top: 0;
-	// left: 0;
-	// right: 0;
-	// bottom: 0;
 	background-color: rgba(12, 24, 36, 0.5);
-	// z-index: 6;
+
+	&__wrap {
+		position: absolute;
+		width: 700px;
+		height: fit-content;
+		background-color: white;
+		margin: 40px auto;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+	}
+}
+.modalDiscount {
+	position: fixed !important;
+	background-color: rgba(12, 24, 36, 0.5);
 
 	&__wrap {
 		position: absolute;

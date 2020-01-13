@@ -19,93 +19,72 @@
 		<link rel="stylesheet" href="../css/main.css">
 	</head>
 	<body id="slider">
-		<header class="header container">
-			<div class="row header__wrap">
-				<div class="header__burger">
-					<div class="header__btn" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<div></div>
-						<div></div>
-						<div></div>
-					</div>
-					<img src="../img/logo.svg" alt="">
-					<menu class="collapse" id="navbarSupportedContent">
-						<a class="null" href="#slider">Главная</a>
-						<a class="null" href="#catalog">Виды страхования</a>
-						<a class="null" href="#map">Мы в регионе</a>
-						<a class="null" href="#aboutUs">О нас</a>
-					</menu>
-				</div>
-				<div class="header__contacts">
-					<img src="../img/phone-call.svg" alt=""><a href="tel:89090950666">8 (909) 095-06-66</a>
-					<img src="../img/envelope.svg" alt=""><a href="mailto:89090950666@bk.ru">89090950666@bk.ru</a>
-				</div>
-			</div>
-
-			<!-- <div class="header__burger row">
-				<div class="header__btn" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-					<div></div>
-					<div></div>
-					<div></div>
-				</div>
-				<div class="collapse" id="collapseExample">
-					<div>
+		<header class="header container-fluid">
+			<div class="container">
+				<div class="row header__wrap">
+					<div class="header__burger">
+						<div class="header__btn" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
 						<img src="../img/logo.svg" alt="">
-						<menu>
+						<menu class="collapse" id="navbarSupportedContent">
 							<a class="null" href="#slider">Главная</a>
 							<a class="null" href="#catalog">Виды страхования</a>
 							<a class="null" href="#map">Мы в регионе</a>
 							<a class="null" href="#aboutUs">О нас</a>
+							<div class="header__contacts">
+								<img src="../img/phone-call.svg" alt=""><a href="tel:89090950666">8 (909) 095-06-66</a><br>
+								<img src="../img/envelope.svg" alt=""><a href="mailto:89090950666@bk.ru">89090950666@bk.ru</a>
+							</div>
 						</menu>
 					</div>
-					<div class="">
+					<div class="header__contacts">
 						<img src="../img/phone-call.svg" alt=""><a href="tel:89090950666">8 (909) 095-06-66</a>
 						<img src="../img/envelope.svg" alt=""><a href="mailto:89090950666@bk.ru">89090950666@bk.ru</a>
 					</div>
 				</div>
-			</div> -->
-
+			</div>
 		</header>
 		<div class="container">
 			<div class="row slider tb3in5">
-
 				<div class="slider__wrap swiper-container">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
-
 							<div class="slide">
 								<div class="slide__wrap">
 									<div class="swiper-pagination"></div>
-									<div class="h1">Январь!</div>
-									<h4>Не бывалые скидки и подарки! При оформлении любого вида страхования!!</h4>
-									<a href="#">Подробнее</a>
+									<div>
+										<div class="h1">Январь!</div>
+										<h4>Не бывалые скидки и подарки! При оформлении любого вида страхования!!</h4>
+									</div>
+									<a data-toggle="modal" data-target="#modalBaner1">Подробнее</a>
 								</div>
 							</div>
 							<div class="slide__img">
 								<img src="../img/Картинкадлябанера.png" alt="">
 							</div>
-							
 						</div>
 						<div class="swiper-slide">
-
 							<div class="slide">
 								<div class="slide__wrap">
 									<div class="swiper-pagination"></div>
-									<div class="h1">Подарки к ОСАГО</div>
-									<h4></h4>
-									<a href="#">Подробнее</a>
+									<div>
+										<div class="h1">Подарки к ОСАГО</div>
+										<h4></h4>
+									</div>
+									<a data-toggle="modal" data-target="#modalBaner2">Подробнее</a>
 								</div>
 							</div>
 							<div class="slide__img">
 								<img src="../img/Картинкадлябанера.png" alt="">
 							</div>
-							
 						</div>
 					</div>
-					
 					<div class="swiper-button-next"></div>
 					<div class="swiper-button-prev"></div>
 				</div>
-
 			</div>
 			<div class="row catalog tb5in5" id="catalog">
 				<div class="h1">Виды страхования</div>
@@ -116,7 +95,7 @@
 						<div>
 							<h3>Автомобили</h3>
 							<span>КАСКО, ОСАГО.</span>
-							<a data-toggle="modal" data-target="#exampleModalLong">ПОДРОБНЕЕ</a>
+							<a data-toggle="modal" data-target="#modalCar">ПОДРОБНЕЕ</a>
 						</div>
 					</div>
 					<div class="catalog__card">
@@ -124,7 +103,7 @@
 						<div>
 							<h3>Жилье</h3>
 							<span>Квартира, дом, ипотека, гражданская ответсвенность.</span>
-							<a >ПОДРОБНЕЕ</a>
+							<a data-toggle="modal" data-target="#modalHome">ПОДРОБНЕЕ</a>
 						</div>
 					</div>
 					<div class="catalog__card">
@@ -132,7 +111,7 @@
 						<div>
 							<h3>Путешествия</h3>
 							<span>ВЗР, страхование от не выезда.</span>
-							<a >ПОДРОБНЕЕ</a>
+							<a data-toggle="modal" data-target="#modalTr">ПОДРОБНЕЕ</a>
 						</div>
 					</div>
 					<div class="catalog__card">
@@ -140,7 +119,7 @@
 						<div>
 							<h3>Здоровье</h3>
 							<span>Клещ, н/с, ДМС.</span>
-							<a href="">ПОДРОБНЕЕ</a>
+							<a data-toggle="modal" data-target="#modalHel">ПОДРОБНЕЕ</a>
 						</div>
 					</div>
 					<div class="catalog__card">
@@ -148,7 +127,7 @@
 						<div>
 							<h3>Туры</h3>
 							<span>За границу и по России.</span>
-							<a href="">ПОДРОБНЕЕ</a>
+							<a data-toggle="modal" data-target="#modalTur">ПОДРОБНЕЕ</a>
 						</div>
 					</div>
 				</div>
@@ -159,7 +138,7 @@
 						<div>
 							<h3>Грузы</h3>
 							<span>Авто, ЖД, судоходные.</span>
-							<a href="">ПОДРОБНЕЕ</a>
+							<a data-toggle="modal" data-target="#modalGr">ПОДРОБНЕЕ</a>
 						</div>
 					</div>
 					<div class="catalog__card">
@@ -167,7 +146,7 @@
 						<div>
 							<h3>Имущество юр. лиц, авто и спец техника</h3>
 							<span>Здания, оборудование, офис, офисная техника, продукты, товары, сырье.</span>
-							<a href="">ПОДРОБНЕЕ</a>
+							<a data-toggle="modal" data-target="#modalIm">ПОДРОБНЕЕ</a>
 						</div>
 					</div>
 					<div class="catalog__card">
@@ -175,7 +154,7 @@
 						<div>
 							<h3>ОПО</h3>
 							<span>Автозаправочные станции, лифты, эскалаторы.</span>
-							<a href="">ПОДРОБНЕЕ</a>
+							<a data-toggle="modal" data-target="#modalOPO">ПОДРОБНЕЕ</a>
 						</div>
 					</div>
 					<div class="catalog__card">
@@ -183,7 +162,7 @@
 						<div>
 							<h3>ГО</h3>
 							<span>Гражданская ответсвенность собственников нежилых помещений, организаторов массовых мероприятий, ГО собственника автостоянки, ГО владельцев складов временного хранения.</span>
-							<a href="">ПОДРОБНЕЕ</a>
+							<a data-toggle="modal" data-target="#modalGO">ПОДРОБНЕЕ</a>
 						</div>
 					</div>
 					<div class="catalog__card">
@@ -191,7 +170,7 @@
 						<div>
 							<h3>Н/С и ДМС</h3>
 							<span>Коллективное страхование сотрудников предприятия от несчастного случая и болезней, страхование руководителей предприятий от несчастного случая и болезней, добровольное мед страхование в организациях.</span>
-							<a href="">ПОДРОБНЕЕ</a>
+							<a data-toggle="modal" data-target="#modalDMS">ПОДРОБНЕЕ</a>
 						</div>
 					</div>
 				</div>
@@ -310,19 +289,21 @@
 				
 			</div>
 		</div>
-		<footer class="container">
-			<h3>Свяжитесь с нами</h3>
-			<a href="tel:89090950666">8 (909) 095-06-66</a><br>
-			<a href="mailto:89090950666@bk.ru">89090950666@bk.ru</a>
-			<div>
-				<a class="null" target="_blank" href="https://www.instagram.com/zashchita_mgn/"><img src="../img/instagram.svg" alt=""></a>
-				<a class="null" target="_blank" href=""><img src="../img/viber.svg" alt=""></a>
-				<a class="null" target="_blank" href="https://vk.com/club187754082"><img src="../img/vk.svg" alt=""></a>
-				<a class="null" target="_blank" href=""><img src="../img/whatsapp.svg" alt=""></a>
+		<footer class="container-fluid">
+			<div class="container">
+				<h3>Свяжитесь с нами</h3>
+				<a href="tel:89090950666">8 (909) 095-06-66</a><br>
+				<a href="mailto:89090950666@bk.ru">89090950666@bk.ru</a>
+				<div>
+					<a class="null" target="_blank" href="https://www.instagram.com/zashchita_mgn/"><img src="../img/instagram.svg" alt=""></a>
+					<a class="null" target="_blank" href="viber://add?number=89068546008"><img src="../img/viber.svg" alt=""></a>
+					<a class="null" target="_blank" href="https://vk.com/club187754082"><img src="../img/vk.svg" alt=""></a>
+					<a class="null" target="_blank" href="whatsapp://send?phone=89068546008"><img src="../img/whatsapp.svg" alt=""></a>
+				</div>
 			</div>
 		</footer>
-
-		<div class="modal modalText" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<!-- modal Text -->
+		<div class="modal modalText" id="modalCar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 			<div class="modalText__wrap">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
@@ -331,13 +312,234 @@
 					<div class="h2">Автомобили</div>
 				</div>
 				<div class="modalText__top">
+<!-- text in <p> -->
+					<div class="collap" id="accordionExample">
+						<div class="collap__card">
+							<div class="collap__header" id="heading1">
+								<div class="collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+									<h3>ОСАГО</h3>
+								</div>
+							</div>
+							<div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordionExample">
+								<div class="collap__text">
+									Полис ОСАГО — это обязательное страхование автогражданской ответственности за причинение вреда жизни, здоровью и имуществу третьих лиц (пассажиров и пешеходов). Имущество третих лиц — это любые материальные ценности, которые повредила ваша машина (чужое ТС, строение, забор и тд.). Полис позволит компенсировать ущерб, который Вы как водительпричинили имуществу и здоровью третьих лиц (пассажиров и пешеходов).
+								</div>
+							</div>
+						</div>
+						<div class="collap__card">
+							<div class="collap__header" id="heading2">
+								<div class="collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+									<h3>КАСКО</h3>
+								</div>
+							</div>
+							<div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionExample">
+								<div class="collap__text">
+									Полис КАСКО — это защита от таких рисков, как угон, хищение, повреждение Вашего автомобиля, риски повреждения автомобиля отскочившим предметом, наездом на препятствия, противоправные действия третьих лиц, стихийные бедствия и многое другое. При выборе полиса КАСКО всегда можно подобрать перечень рисков, которые будут актуальны именно для Вашего авто.
+								</div>
+							</div>
+						</div>
+						<div class="collap__card">
+							<div class="collap__header" id="heading3">
+								<div class="collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+									<h3>Защита</h3>
+								</div>
+							</div>
+							<div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordionExample">
+								<div class="collap__text">
+									Полис Защита гарантирует получение выплаты в случае, когда виновник ДТП эксплуатировал ТС, не имея полиса ОСАГО.
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="btnn">
+						<span>Оформить</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal modalText" id="modalHome" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+			<div class="modalText__wrap">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="modalText__img">
+					<div class="h2">Жильё</div>
+				</div>
+				<div class="modalText__top">
+<!-- text in <p> -->
+					<div class="collap" id="accordionExample">
+						<div class="collap__card">
+							<div class="collap__header" id="heading1">
+								<div class="collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+									<h3>Квартира</h3>
+								</div>
+							</div>
+							<div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordionExample">
+								<div class="collap__text">
+									<p>Страхование квартиры — это добровольный вид страхования, при котором возможно застраховать Ваше недвижимое и движемое (в т.ч. ценное) имущество и гражданскую ответственность перед соседями на случай повреждений при взрыве, заливе, пожаре, стихийных бедствий, противоправных действий третьих лиц и других рисков.</p>
+									<p>Наличие такого полиса, предусматривает денежную выплату в случае указанных неприятностей, которую Вы сможете потратить на востановление и ремонт своего имущества.</p>
+								</div>
+							</div>
+						</div>
+						<div class="collap__card">
+							<div class="collap__header" id="heading2">
+								<div class="collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+									<h3>Строения</h3>
+								</div>
+							</div>
+							<div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionExample">
+								<div class="collap__text">
+									Страхование строений — это добровольный вид страхования, который дает возможность, застраховать жилой дом, дачу, дом за городом, баню, хозяйственные постройки, ограждения и иные сооружения на приусадебном участке, элементы ландшафтного дизайна, а так же самоходную технику и движимое имущество. Таким полисом , предусматриваются случаи повреждения или гибели в результате пожара (по пречине короткого замыкания), взрыва, залива (в ходе заморозки / разморозки водонесущих труб), стихийных бедствий, механических повреждений (падения деревьев, строительных кранов, осветительных опор и т.д.), противоправных действий третьих лиц (кражи, вандализма, поджога и других случаев уничтожения имущества), теракта, дополнительных рисков.
+								</div>
+							</div>
+						</div>
+						<div class="collap__card">
+							<div class="collap__header" id="heading3">
+								<div class="collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+									<h3>Ипотека</h3>
+								</div>
+							</div>
+							<div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordionExample">
+								<div class="collap__text">
+									Ипотечное страхование — это эффективный способ защиты финансовых интересов заемщика по выплате кредита в случае наступления непредвиденных обстоятельств и одно из обязательных требований банков и иных кредитных организаций, которые выдают ипотечные кредиты и займы.
+								</div>
+							</div>
+						</div>
+						<div class="collap__card">
+							<div class="collap__header" id="heading4">
+								<div class="collapsed" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+									<h3>Гражданская ответственность</h3>
+								</div>
+							</div>
+							<div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionExample">
+								<div class="collap__text">
+									<p>Страхование гражданской ответственности - это реальная возможность застраховать Вашу гражданскую ответственность перед лицами, которым может быть причинен вред по Вашей вине при эксплуатации Вашего имущества. </p>
+									<p>Страхованием покрывается гражданская ответственность, связанная с причинением вреда жизни, здоровью и/или имуществу третьих лиц, в результате случаев, непреднамеренно возникших по вине лица,ответственность которого застрахована.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="btnn">
+						<span>Оформить</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal modalText" id="modalTr" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+			<div class="modalText__wrap">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="modalText__img">
+					<div class="h2">Путешествия</div>
+				</div>
+				<div class="modalText__top">
+					<p>Страховку путешественника часто называют полисом медицинского страхования туристов. Это связано с тем, что полис в первую очередь обеспечивает медицинскую помощь застрахованному при выезде с постоянного места жительства.</p>
+					<p>Полис покрывает риски, связанные с ухудшением здоровья застрахованного, это может быть обычное заболевание, экстренное (в том числе операционного) вмешательстве, получение медицинской помощи при травме или несчастном случае.</p>
+					<div class="collap" id="accordionExample">
+						<div class="collap__card">
+							<div class="collap__header" id="heading1">
+								<div class="collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+									<h3>Страхование от не выезда</h3>
+								</div>
+							</div>
+							<div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordionExample">
+								<div class="collap__text">
+									<p>Необходимость оформить туристическую страховку так же может возникнуть у лиц, выезжающих на территорию РФ и являющтхся нерезидентами.</p>
+									<p>Если Вам требуеться полис для получения патента на работу можно оформитьполис добровольного страхования мигрантов.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="btnn">
+						<span>Оформить</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal modalText" id="modalHel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+			<div class="modalText__wrap">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="modalText__img">
+					<div class="h2">Здоровье</div>
+				</div>
+				<div class="modalText__top">
+					<p>Cтрахование жизни и здоровья от несчастных случаев – это надежный способ позаботиться о себе и своих близких.</p>
+					<p>Данный вид страхования заключается в том, что он предоставляет широкий выбор вариантов!</p>
+					<p>Вы можете самостоятельно решить:</p>
+					<ul>
+						<li>на какую сумму заключить договор, ориентируясь на свой доход;</li>
+						<li>учитывая риски необходимые и принимая во внимание свой образ жизни.</li>
+					</ul>
+					<div class="collap" id="accordionExample">
+						<div class="collap__card">
+							<div class="collap__header" id="heading1">
+								<div class="collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+									<h3>Анти клещ страхование от укуса клеща</h3>
+								</div>
+							</div>
+							<div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordionExample">
+								<div class="collap__text">
+									<p>В соответствии с базовой программой ОМС экстренная (то есть при укусе) профилактика иммуноглобулином против клещевого вирусного энцефалита может проводиться за счет средств обязательного медицинского страхования, но строго по показаниям врача.</p>
+									<p>Полис на случай укуса клеща гарантирует своевременное его иследование и назначение необходимого лечения. Полисом покрываются затраты и на лечение и на иследование.</p>
+								</div>
+							</div>
+						</div>
+						<div class="collap__card">
+							<div class="collap__header" id="heading2">
+								<div class="collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+									<h3>ДМС</h3>
+								</div>
+							</div>
+							<div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionExample">
+								<div class="collap__text">
+									<p>Полис ДМС – это добровольное медицинское страхование с целью получения качественной медицинской помощи, которую наша компания организует только в современных клиниках Москвы и других городов России с новейшим оборудованием и лучшими специалистами.</p> 
+									<p>При покупке полиса ДМС вы можете выбрать как необходимый спектр медицинских услуг (например, поликлинические, стоматологические, стационарные), так и ограниченный объем покрытия (например, на случай лечения заболеваний при укусе иксодовым клещом).</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="btnn">
+						<span>Оформить</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal modalText" id="modalTur" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+			<div class="modalText__wrap">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="modalText__img">
+					<div class="h2">Туры</div>
+				</div>
+				<div class="modalText__top">
+					<p>Уважаемые страхователи! Предлагаем Вашему вниманию туристические путевки в пансионаты и дома отдыха России и нашей области, а так же специальные предложения по Крыму  ("Крым круглый год") и Краснодарскому краю на лето 2020 года и туры по заграничным направлениям (отели Турции, Тайланда и др.)!!! Благодаря хорошим объемам продаж и надежной репутации у нас есть возможность предложить для Вас выгодные цены с хорошими скидками. Оформляя тур через наше агентство, Вы можете вернуть 13%. </p>
+					<div class="btnn">
+						<span>Оформить</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal modalText" id="modalGr" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+			<div class="modalText__wrap">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="modalText__img">
+					<div class="h2">Здоровье</div>
+				</div>
+				<div class="modalText__top">
 					<p>Ситуация на дороге никогда не бывает предсказуемой. Даже если вы давно водите автомобиль и прекрасно справляетесь с его управлением, вы не можете быть уверены в своей безопасности, ведь причиной ДТП могут стать другие участники дорожного движения и пешеходы, плохие погодные условия, некачественное дорожное покрытие и множество других факторов. </p>
 					<p>Заключив договор страхования своей машины по одной из программ «АльфаСтрахование», вы снизите до минимума риски, связанные с использованием личного авто.</p>
 					<div class="collap" id="accordionExample">
 						<div class="collap__card">
 							<div class="collap__header" id="heading1">
 								<div class="collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-									<h3>КАСКО</h3>
+									<h3>Квартира</h3>
 								</div>
 							</div>
 							<div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordionExample">
@@ -349,7 +551,7 @@
 						<div class="collap__card">
 							<div class="collap__header" id="heading2">
 								<div class="collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
-									<h3>ОСАГО</h3>
+									<h3>Дом</h3>
 								</div>
 							</div>
 							<div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionExample">
@@ -361,7 +563,7 @@
 						<div class="collap__card">
 							<div class="collap__header" id="heading3">
 								<div class="collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
-									<h3>Продление</h3>
+									<h3>Ипотека</h3>
 								</div>
 							</div>
 							<div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordionExample">
@@ -377,6 +579,246 @@
 				</div>
 			</div>
 		</div>
+		<div class="modal modalText" id="modalIm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+			<div class="modalText__wrap">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="modalText__img">
+					<div class="h2">Здоровье</div>
+				</div>
+				<div class="modalText__top">
+					<p>Ситуация на дороге никогда не бывает предсказуемой. Даже если вы давно водите автомобиль и прекрасно справляетесь с его управлением, вы не можете быть уверены в своей безопасности, ведь причиной ДТП могут стать другие участники дорожного движения и пешеходы, плохие погодные условия, некачественное дорожное покрытие и множество других факторов. </p>
+					<p>Заключив договор страхования своей машины по одной из программ «АльфаСтрахование», вы снизите до минимума риски, связанные с использованием личного авто.</p>
+					<div class="collap" id="accordionExample">
+						<div class="collap__card">
+							<div class="collap__header" id="heading1">
+								<div class="collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+									<h3>Квартира</h3>
+								</div>
+							</div>
+							<div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordionExample">
+								<div class="collap__text">
+								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								</div>
+							</div>
+						</div>
+						<div class="collap__card">
+							<div class="collap__header" id="heading2">
+								<div class="collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+									<h3>Дом</h3>
+								</div>
+							</div>
+							<div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionExample">
+								<div class="collap__text">
+									Этот полис страхования авто по закону обязан иметь каждый владелец личного транспорта. Он предназначен для компенсации ущерба, который был нанесен здоровью, жизни и имуществу третьих лиц в ДТП, возникшем по вашей вине. Размеры страхового возмещения по ОСАГО ограничены до 500 тыс. рублей на каждого пострадавшего.
+								</div>
+							</div>
+						</div>
+						<div class="collap__card">
+							<div class="collap__header" id="heading3">
+								<div class="collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+									<h3>Ипотека</h3>
+								</div>
+							</div>
+							<div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordionExample">
+								<div class="collap__text">
+								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="btnn">
+						<span>Оформить</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal modalText" id="modalOPO" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+			<div class="modalText__wrap">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="modalText__img">
+					<div class="h2">Здоровье</div>
+				</div>
+				<div class="modalText__top">
+					<p>Ситуация на дороге никогда не бывает предсказуемой. Даже если вы давно водите автомобиль и прекрасно справляетесь с его управлением, вы не можете быть уверены в своей безопасности, ведь причиной ДТП могут стать другие участники дорожного движения и пешеходы, плохие погодные условия, некачественное дорожное покрытие и множество других факторов. </p>
+					<p>Заключив договор страхования своей машины по одной из программ «АльфаСтрахование», вы снизите до минимума риски, связанные с использованием личного авто.</p>
+					<div class="collap" id="accordionExample">
+						<div class="collap__card">
+							<div class="collap__header" id="heading1">
+								<div class="collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+									<h3>Квартира</h3>
+								</div>
+							</div>
+							<div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordionExample">
+								<div class="collap__text">
+								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								</div>
+							</div>
+						</div>
+						<div class="collap__card">
+							<div class="collap__header" id="heading2">
+								<div class="collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+									<h3>Дом</h3>
+								</div>
+							</div>
+							<div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionExample">
+								<div class="collap__text">
+									Этот полис страхования авто по закону обязан иметь каждый владелец личного транспорта. Он предназначен для компенсации ущерба, который был нанесен здоровью, жизни и имуществу третьих лиц в ДТП, возникшем по вашей вине. Размеры страхового возмещения по ОСАГО ограничены до 500 тыс. рублей на каждого пострадавшего.
+								</div>
+							</div>
+						</div>
+						<div class="collap__card">
+							<div class="collap__header" id="heading3">
+								<div class="collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+									<h3>Ипотека</h3>
+								</div>
+							</div>
+							<div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordionExample">
+								<div class="collap__text">
+								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="btnn">
+						<span>Оформить</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal modalText" id="modalGO" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+			<div class="modalText__wrap">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="modalText__img">
+					<div class="h2">Здоровье</div>
+				</div>
+				<div class="modalText__top">
+					<p>Ситуация на дороге никогда не бывает предсказуемой. Даже если вы давно водите автомобиль и прекрасно справляетесь с его управлением, вы не можете быть уверены в своей безопасности, ведь причиной ДТП могут стать другие участники дорожного движения и пешеходы, плохие погодные условия, некачественное дорожное покрытие и множество других факторов. </p>
+					<p>Заключив договор страхования своей машины по одной из программ «АльфаСтрахование», вы снизите до минимума риски, связанные с использованием личного авто.</p>
+					<div class="collap" id="accordionExample">
+						<div class="collap__card">
+							<div class="collap__header" id="heading1">
+								<div class="collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+									<h3>Квартира</h3>
+								</div>
+							</div>
+							<div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordionExample">
+								<div class="collap__text">
+								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								</div>
+							</div>
+						</div>
+						<div class="collap__card">
+							<div class="collap__header" id="heading2">
+								<div class="collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+									<h3>Дом</h3>
+								</div>
+							</div>
+							<div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionExample">
+								<div class="collap__text">
+									Этот полис страхования авто по закону обязан иметь каждый владелец личного транспорта. Он предназначен для компенсации ущерба, который был нанесен здоровью, жизни и имуществу третьих лиц в ДТП, возникшем по вашей вине. Размеры страхового возмещения по ОСАГО ограничены до 500 тыс. рублей на каждого пострадавшего.
+								</div>
+							</div>
+						</div>
+						<div class="collap__card">
+							<div class="collap__header" id="heading3">
+								<div class="collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+									<h3>Ипотека</h3>
+								</div>
+							</div>
+							<div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordionExample">
+								<div class="collap__text">
+								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="btnn">
+						<span>Оформить</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal modalText" id="modalDMS" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+			<div class="modalText__wrap">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="modalText__img">
+					<div class="h2">Здоровье</div>
+				</div>
+				<div class="modalText__top">
+					<p>Ситуация на дороге никогда не бывает предсказуемой. Даже если вы давно водите автомобиль и прекрасно справляетесь с его управлением, вы не можете быть уверены в своей безопасности, ведь причиной ДТП могут стать другие участники дорожного движения и пешеходы, плохие погодные условия, некачественное дорожное покрытие и множество других факторов. </p>
+					<p>Заключив договор страхования своей машины по одной из программ «АльфаСтрахование», вы снизите до минимума риски, связанные с использованием личного авто.</p>
+					<div class="collap" id="accordionExample">
+						<div class="collap__card">
+							<div class="collap__header" id="heading1">
+								<div class="collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+									<h3>Квартира</h3>
+								</div>
+							</div>
+							<div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordionExample">
+								<div class="collap__text">
+								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								</div>
+							</div>
+						</div>
+						<div class="collap__card">
+							<div class="collap__header" id="heading2">
+								<div class="collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+									<h3>Дом</h3>
+								</div>
+							</div>
+							<div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionExample">
+								<div class="collap__text">
+									Этот полис страхования авто по закону обязан иметь каждый владелец личного транспорта. Он предназначен для компенсации ущерба, который был нанесен здоровью, жизни и имуществу третьих лиц в ДТП, возникшем по вашей вине. Размеры страхового возмещения по ОСАГО ограничены до 500 тыс. рублей на каждого пострадавшего.
+								</div>
+							</div>
+						</div>
+						<div class="collap__card">
+							<div class="collap__header" id="heading3">
+								<div class="collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+									<h3>Ипотека</h3>
+								</div>
+							</div>
+							<div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordionExample">
+								<div class="collap__text">
+								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="btnn">
+						<span>Оформить</span>
+					</div>
+				</div>
+			</div>
+		</div>
+<!-- modal Text End-->
+<!-- modal Discounts -->
+		<div class="modal modalDiscount" id="modalBaner1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+			<div class="modalDiscount__wrap">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+
+			</div>
+		</div>
+		<div class="modal modalDiscount" id="modalBaner2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+			<div class="modalDiscount__wrap">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+
+			</div>
+		</div>
+<!-- modal Discounts End-->
+<!-- modal Form -->
 		<div class="modal modalForm">
 			<div class="modalForm__wrap">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -384,6 +826,7 @@
 				</button>
 			</div>
 		</div>
+<!-- modal Form End -->
 		<a href="#slider" class="butUp hidden"></a>
 
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
