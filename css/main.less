@@ -498,6 +498,8 @@ ul {
 		top: auto;
 		left: 60px;
 		right: auto;
+		outline: none;
+		transition: 300ms;
 		
 		@media @desktop {
 			bottom: auto;
@@ -507,6 +509,10 @@ ul {
 		}
 		@media @laptop {
 			display: none;
+		}
+		&:hover,
+		&:focus {
+			color: @yellow;
 		}
 	}
 	.swiper-button-next {
@@ -1222,7 +1228,7 @@ footer {
 	background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/traveler.png);
 }
 #modalHel .modalText__img {
-	background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/home1.png);
+	background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/health.png);
 }
 #modalTur .modalText__img {
 	background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/tours.png);
@@ -1375,3 +1381,4 @@ footer {
 	}
 }
 // lessc main.less main.css
+// lessc -x main.less минифицированный код
