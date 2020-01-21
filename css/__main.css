@@ -1231,13 +1231,13 @@ footer .container div a:not(:last-child) {
   background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/specialMachinery.png);
 }
 #modalOPO .modalText__img {
-  background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/cargo.png);
+  background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/oil.png);
 }
 #modalGO .modalText__img {
-  background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/festival.png);
+  background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/bar.png);
 }
 #modalDMS .modalText__img {
-  background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/company.png);
+  background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../img/builders.png);
 }
 .collap__card {
   border: 2px solid #00509e;
