@@ -104,3 +104,23 @@ header {
     width: 0;
   }
 }
+
+#cookies_info {
+  position: sticky;
+  height: 150px;
+  width: 80%;
+  bottom: 0;
+  z-index: 100;
+  background: rgba(12, 24, 36, 0.8);
+  display: none;
+  text-align: center;
+  margin: 0 auto;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  padding: 20px;
+  font-size: 20px;
+  color: $primary-color;
+
+  & > .btnn {
+    margin: 15px auto 0 auto;
+  }
+}

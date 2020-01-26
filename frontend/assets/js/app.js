@@ -17,3 +17,4 @@
 //= _WeAreInRegion.js
 //= _AccordionWidget.js
 //= _ModalFromModal.js
+//= _CookiesInfo.js
