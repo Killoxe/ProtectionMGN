@@ -7,6 +7,9 @@ use frontend\components\helpers\Html;
 
 class ListEditItemActionDelete extends ListEditItemAction
 {
+    /** @var string */
+    public $textButton;
+
     public $options = [
         'class' => 'btn btn-dark-grey btn-icon--small list-edit__btn-delete'
     ];
@@ -23,7 +26,6 @@ class ListEditItemActionDelete extends ListEditItemAction
      */
     public function renderContent($item)
     {
-        //TODO: воткнуть иконку
-        return Html::a('Удалить водителя', null, $this->options); /*Html::icon('clear')*/
+        return Html::a($this->textButton, null, $this->options);
     }
 }

@@ -5,7 +5,7 @@ $params = array_merge(
 );
 
 return [
-    'id' => 'absolut74-frontend',
+    'id' => 'protectionmgn-frontend',
     'language' => 'ru-RU',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
@@ -18,14 +18,14 @@ return [
     ],
     'components' => [
         'request' => [
-            'csrfParam' => '_csrf-absolut74',
+            'csrfParam' => '_csrf-protectionmgn',
             'baseUrl' => ''
         ],
         'user' => [
             'identityClass' => 'frontend\models\User',
         ],
         'session' => [
-            'name' => '_absolut74',
+            'name' => '_protectionmgn',
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -50,7 +50,7 @@ return [
             'useFileTransport' => false,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.yandex.ru',
+                'host' => 'smtp.gmail.com',
                 'username' => $params['mailer.senderFrom'],
                 'password' => $params['mailer.senderPassword'],
                 'port' => '587', //465 - 587
@@ -59,6 +59,43 @@ return [
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
+        ],
+        'assetManager' => [
+            'appendTimestamp' => true,
+            'linkAssets' => false,
+            'bundles' => [
+                \yii\web\JqueryAsset::class => [
+                    'basePath' => '@webroot',
+                    'baseUrl' => '@web',
+                    'js' => ['js/lib.min.js'],
+                ],
+                \yii\bootstrap\BootstrapAsset::class => [
+                    'basePath' => '@webroot',
+                    'baseUrl' => '@web',
+                    //'css' => ['css/lib.min.css'],
+                    'css' => []
+                ],
+                \yii\bootstrap4\BootstrapAsset::class => [
+                    'basePath' => '@webroot',
+                    'baseUrl' => '@web',
+                    'css' => ['css/lib.min.css'],
+                ],
+                \yii\bootstrap\BootstrapPluginAsset::class => [
+                    'basePath' => '@webroot',
+                    'baseUrl' => '@web',
+                    'js' => ['js/lib.min.js'],
+                ],
+                \yii\web\YiiAsset::class => [
+                    'basePath' => '@webroot',
+                    'baseUrl' => '@web',
+                    'js' => ['js/lib.min.js'],
+                ],
+                yii\widgets\ActiveFormAsset::class => [
+                    'basePath' => '@webroot',
+                    'baseUrl' => '@web',
+                    'js' => ['js/lib.min.js'],
+                ],
+            ],
         ],
     ],
     'params' => $params,

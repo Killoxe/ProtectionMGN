@@ -4,3 +4,103 @@ html {
   min-height: 100%;
   position: relative;
 }
+
+.btn {
+  position: relative;
+  border: 1px solid $btn-color;
+  padding: 11px 30px 9px;
+  width: fit-content;
+  cursor: pointer;
+  border-radius: 0px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $btn-color;
+    transition: 300ms;
+    z-index: -1;
+  }
+
+  &:hover {
+    &::after {
+      width: 0;
+    }
+  }
+  span {
+    text-transform: uppercase;
+  }
+}
+
+ul {
+  margin: 0 0 0 20px;
+
+  li {
+    &:after {
+      left: -20px !important;
+      content: "";
+      position: absolute;
+      top: 4px;
+      width: 10px;
+      height: 10px;
+      background-color: #ffb942;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+header {
+  .navbar {
+    & > a {
+      color: black;
+      font-size: 17px;
+
+      &:not(:last-of-type) {
+        margin-right: 17px;
+      }
+
+      &:first-of-type {
+        margin-left: 12px;
+      }
+
+      &:after {
+        width: 0;
+        height: 0;
+        background: none;
+      }
+
+      &:hover {
+        color: #007bff !important;
+      }
+    }
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    padding-bottom: 15px;
+
+    a {
+      color: white !important;
+      font-size: 15px;
+
+      &:after {
+        width: 0;
+        height: 0;
+        background: none;
+      }
+
+      &:hover {
+        color: #007bff !important;
+      }
+    }
+  }
+
+  &.sticky > .container > .header__wrap > .header__burger > img {
+    transition: 500ms;
+    width: 0;
+  }
+}

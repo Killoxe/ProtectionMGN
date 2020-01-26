@@ -46,8 +46,9 @@ class CalculateOsagoFormPeopleListEdit extends ListEdit
         $this->itemActions = [
             [
                 'class' => ListEditItemActionDelete::class,
+                'textButton' => Html::tag('span', 'Удалить водителя'),
                 'options' => [
-                    'class' => 'btn btn-icon--small list-edit__btn-delete calculateosagoform-people-list-edit__btn-delete'
+                    'class' => 'btnn list-edit__btn-delete calculateosagoform-people-list-edit__btn-delete'
                 ],
                 'jsClassOptions' => [
                     'selector' => '.calculateosagoform-people-list-edit__btn-delete'
@@ -99,13 +100,17 @@ class CalculateOsagoFormPeopleListEdit extends ListEdit
     {
         $name = $this->getInputName($index, 'date_birth');
         $id = $this->getInputId($name);
-        $label = Html::label($item->getAttributeLabel('date_birth'), null, ['class' => 'control-label']);
+        $label =
+            Html::label($item->getAttributeLabel('date_birth'), null, ['class' => 'control-label']).
+            Html::tag('div', null, ['class' => 'required-icon']);
         $input = DatePicker::widget([
             'name' => $name,
             'attribute' => 'date_birth',
             'options' => [
                 'id' => $id,
-                'class' => 'calculateosagoform-people-date_birth-input'
+                'class' => 'calculateosagoform-people-date_birth-input',
+                'autocomplete' => 'off',
+                'placeholder' => 'Выберите дату',
             ],
         ]);
         $error = Html::tag('p', '', ['class' => 'help-block help-block-error']);
@@ -117,10 +122,13 @@ class CalculateOsagoFormPeopleListEdit extends ListEdit
     {
         $name = $this->getInputName($index, 'driver_license_series');
         $id = $this->getInputId($name);
-        $label = Html::label($item->getAttributeLabel('driver_license_series'), null, ['class' => 'control-label']);
+        $label =
+            Html::label($item->getAttributeLabel('driver_license_series'), null, ['class' => 'control-label']).
+            Html::tag('div', null, ['class' => 'required-icon']);
         $input = Html::input('text', $name, null, [
             'id' => $id,
-            'class' => 'form-control calculateosagoform-driver_license_series-input'
+            'class' => 'form-control calculateosagoform-driver_license_series-input',
+            'placeholder' => 'Ваш ответ',
         ]);
 
         $error = Html::tag('p', '', ['class' => 'help-block help-block-error']);
@@ -132,10 +140,13 @@ class CalculateOsagoFormPeopleListEdit extends ListEdit
     {
         $name = $this->getInputName($index, 'driver_license_number');
         $id = $this->getInputId($name);
-        $label = Html::label($item->getAttributeLabel('driver_license_number'), null, ['class' => 'control-label']);
+        $label =
+            Html::label($item->getAttributeLabel('driver_license_number'), null, ['class' => 'control-label']).
+            Html::tag('div', null, ['class' => 'required-icon']);
         $input = Html::input('text', $name, null,  [
             'id' => $id,
-            'class' => 'form-control calculateosagoform-driver_license_number-input'
+            'class' => 'form-control calculateosagoform-driver_license_number-input',
+            'placeholder' => 'Ваш ответ'
         ]);
 
         $error = Html::tag('p', '', ['class' => 'help-block help-block-error']);
@@ -147,13 +158,17 @@ class CalculateOsagoFormPeopleListEdit extends ListEdit
     {
         $name = $this->getInputName($index, 'date_begin_experience');
         $id = $this->getInputId($name);
-        $label = Html::label($item->getAttributeLabel('date_begin_experience'), null, ['class' => 'control-label']);
+        $label =
+            Html::label($item->getAttributeLabel('date_begin_experience'), null, ['class' => 'control-label']).
+            Html::tag('div', null, ['class' => 'required-icon']);
         $input = DatePicker::widget([
             'name' => $name,
             'attribute' => 'date_begin_experience',
             'options' => [
                 'id' => $id,
-                'class' => 'calculateosagoform-date_begin_experience-input'
+                'class' => 'calculateosagoform-date_begin_experience-input',
+                'placeholder' => 'Выберите дату',
+                'autocomplete' => 'off',
             ],
         ]);
         $error = Html::tag('p', '', ['class' => 'help-block help-block-error']);

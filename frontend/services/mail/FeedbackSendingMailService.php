@@ -2,27 +2,38 @@
 
 namespace frontend\services\mail;
 
+
+use frontend\models\staticLists\InsuranceType;
 use Yii;
+use frontend\models\forms\FeedbackForm;
 use yii\base\BaseObject;
 
 class FeedbackSendingMailService extends BaseObject
 {
+    public $view = 'feedback-html';
 
-    //TODO: это
+    public $subject = 'Обратная связь';
 
-    public $view = 'test-html';
+    protected function buildData(FeedbackForm $model)
+    {
+        $attributes = $model->attributes;
 
-    public $data;
+        unset($attributes['captcha']);
+        unset($attributes['accept']);
+        $attributes['insurance'] = InsuranceType::getFullPath($attributes['insurance']);
+
+        return $attributes;
+    }
 
     public function send($model)
     {
-        /*
-        $message = Yii::$app->mailer->compose($this->view, ['data' => ['mail' => $model->mail, 'text' => $model->text]])
-            ->setTo(Yii::$app->params['mailer.sendTo'])
-            ->setFrom(Yii::$app->params['mailer.senderFrom'])
-            ->setSubject('test');
-        */
+        $data = $this->buildData($model);
 
-        return true; //$message->send();
+        $message = Yii::$app->mailer->compose($this->view, ['data' => $data])
+            ->setTo(Yii::$app->params['mailer.senderFrom']/*$data['email']*/)
+            ->setFrom(Yii::$app->params['mailer.senderFrom'])
+            ->setSubject($this->subject);
+
+        return $message->send();
     }
 }

@@ -18,6 +18,7 @@ CalculateOsagoFormPeopleListEditItem.prototype = $.extend(Object.create(ListEdit
         //TODO: пока такой костыль на изменение языка и даты в пререопределениях datepicker'а
         $.fn.kvDatepicker.defaults.format = 'dd.mm.yyyy';
         $.fn.kvDatepicker.defaults.language = 'ru';
+        $.fn.kvDatepicker.defaults.autoclose = true;
 
         var $item = this.$element;
         var index= this.uniqueIndex;

@@ -11,3 +11,9 @@
 //= calculateOsagoFormPeopleListEdit\_CalculateOsagoFormPeopleListEditActionDelete.js
 
 //= _CalculateOsagoForm.js
+//= _StickyNavbar.js
+//= _SmoothScroll.js
+//= _Sliders.js
+//= _WeAreInRegion.js
+//= _AccordionWidget.js
+//= _ModalFromModal.js

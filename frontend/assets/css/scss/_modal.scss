@@ -1,0 +1,54 @@
+@import "variables";
+
+.modal {
+    color: black;
+
+    .modal-content {
+        border-radius: 0;
+        border: none;
+
+        & > .modal-header {
+            border: none;
+            border-radius: 0;
+
+            @each $header, $nameImg in $modal-headers {
+                &.modal-#{$header}-header {
+                    height: 192px;
+                    background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../css/images/#{$nameImg});
+                    background-size: cover;
+                    margin-bottom: 30px;
+
+                    & > .modal-title {
+                        top: 120px;
+                        left: 20px;
+                        font-size: 30px;
+                        color: #0c1824;
+                        position: relative;
+                    }
+                }
+            }
+
+            & > .close {
+                padding: 0;
+                margin: 0;
+                background-color: rgba(255, 255, 255, 0.7) !important;
+                text-shadow: none;
+                font-size: 27px;
+            }
+        }
+
+        & > .modal-body {
+            &.modal__card {
+                padding: 0 30px 30px 30px;
+            }
+
+            font-size: 15px;
+            border: none;
+            border-radius: 0;
+
+            & > .btn-in-modal {
+                margin: 40px auto 0 auto;
+            }
+        }
+    }
+}

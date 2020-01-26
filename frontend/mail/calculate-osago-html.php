@@ -1,39 +1,43 @@
-<?php
-
-?>
-
 <div class="calculate-osago-html">
-    ага
-</div>
+    <div class="from">
+        <strong>Заявка на ОСАГО от:</strong> <?= $data['surname'] ?> <?= $data['name'] ?> <?= $data['patronymic'] ?>
+    </div>
+    <div class="email">
+        <strong>Почта:</strong> <?= $data['email'] ?>
+    </div>
+    <div class="phone">
+        <strong>Телефон:</strong> <?= $data['phone'] ?>
+    </div>
 
-<?php
-/*
-    '_csrf-absolut74' => 'BApiNTindhUvVWedrA2IApmMHK1mY2tNUV38f00YoTJBQAtmZ9JAWxcsLcX-UtBW0upq_zYUXAc3FrgpeUvgAg=='
-    'CalculateOsagoForm' => [
-    'surname' => 'ter'
-        'name' => 'ser'
-        'patronymic' => 'dmit'
-        'people' => [
-    -1 => [
-        'date_birth' => ''
-                'driver_license_series' => ''
-                'driver_license_number' => ''
-                'date_begin_experience' => ''
-            ]
-            0 => [
-    'date_birth' => '27.12.2019'
-                'driver_license_series' => 'а'
-                'driver_license_number' => 'а'
-                'date_begin_experience' => '27.12.2019'
-            ]
-        ]
-        'date_end_insurance_policy' => ''
-        'horse_power' => '3'
-        'registration' => '0'
-        'email' => 'boi@next.door'
-        'phone' => '+7(800)555-35-35'
-        'captcha' => ''
-        'accept' => '1'
-    ]
-    'g-recaptcha-response' => ''
-*/
+    <div class="people">
+        <strong>Водители:</strong>
+    </div>
+    <ol class="people-list" style="padding-left: 10px">
+    <?php foreach ($data['people'] as $i => $people): ?>
+        <li class="people-<?= $i ?>">
+            <div class="date-birth">
+                <strong>Дата рождения:</strong> <?= $people['date_birth'] ?>
+            </div>
+            <div class="driver-license-series">
+                <strong>Серия водительского удостоверения:</strong> <?= $people['driver_license_series'] ?>
+            </div>
+            <div class="driver-license-number">
+                <strong>Номер водительского удостоверения:</strong> <?= $people['driver_license_number'] ?>
+            </div>
+            <div class="date-begin-experience">
+                <strong>Дата начала стажа:</strong> <?= $people['date_begin_experience'] ?>
+            </div>
+        </li>
+    <?php endforeach; ?>
+    </ol>
+
+    <div class="date-end-insurance-policy">
+        <strong>Дата окончания страхового полиса ОСАГО:</strong> <?= $data['date_end_insurance_policy'] ? $data['date_end_insurance_policy'] : '-' ?>
+    </div>
+    <div class="horse-power">
+        <strong>Лошадиные силы:</strong> <?= $data['horse_power'] ?>
+    </div>
+    <div class="registration">
+        <strong>Прописа:</strong> <?= $data['registration'] ?>
+    </div>
+</div>

@@ -40,7 +40,7 @@ class FeedbackForm extends Model
     {
         $scenarios = parent::scenarios();
         $scenarios[self::SCENARIO_CREATE] = [
-            'surname', 'name', 'patronymic', 'email', 'phone', 'insurance', 'message', /*'captcha',*/ 'accept'
+            'surname', 'name', 'patronymic', 'email', 'phone', 'insurance', 'message', 'captcha', 'accept'
         ];
 
         return $scenarios;
