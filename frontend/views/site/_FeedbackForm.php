@@ -7,6 +7,7 @@ use yii\helpers\Html;
 use yii\widgets\MaskedInput;
 use kartik\select2\Select2;
 use frontend\models\staticLists\InsuranceType;
+use frontend\widgets\Button;
 
 /* @var $this yii\web\View */
 /* @var $model frontend\models\forms\FeedbackForm */
@@ -63,7 +64,7 @@ use frontend\models\staticLists\InsuranceType;
 
     <?= $form->field($model, 'captcha', ['template' => "{input}"])->widget(ReCaptcha2::class)->label(false) ?>
 
-    <?= Html::submitButton('Отправить', ['class' => 'btn']) ?>
+    <?= Html::submitButton(Html::tag('span', 'Отправить'), ['class' => 'btnn']) ?>
 
     <?= $form
         ->field($model, 'accept')

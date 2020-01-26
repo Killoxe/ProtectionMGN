@@ -1,10 +1,15 @@
+@import "../frontend.css";
+
 @import "variables";
 
 @import "app-icons-font";
 @import "layout";
 
 @import "widgets/calculate-osago-form-people-list-edit";
+@import "widgets/accordion";
 
 @import "form";
 @import "forms/feedback-form";
 @import "forms/calculate-osago-form";
+
+@import "modal";

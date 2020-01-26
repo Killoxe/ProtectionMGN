@@ -9,6 +9,7 @@ use yii\widgets\MaskedInput;
 use frontend\models\staticLists\HorsePower;
 use frontend\models\staticLists\Registration;
 use frontend\widgets\CalculateOsagoFormPeopleListEdit\CalculateOsagoFormPeopleListEdit;
+use frontend\widgets\Button;
 
 /* @var $this yii\web\View */
 /* @var $model frontend\models\forms\CalculateOsagoForm */
@@ -98,7 +99,7 @@ use frontend\widgets\CalculateOsagoFormPeopleListEdit\CalculateOsagoFormPeopleLi
 
     <?= $form->field($model, 'captcha', ['template' => "{input}"])->widget(ReCaptcha2::class)->label(false) ?>
 
-    <?= Html::submitButton('Отправить', ['class' => 'btn']) ?>
+    <?= Html::submitButton(Html::tag('span', 'Отправить'), ['class' => 'btnn']) ?>
 
     <?= $form
         ->field($model, 'accept')

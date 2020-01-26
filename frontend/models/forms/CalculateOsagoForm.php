@@ -79,8 +79,7 @@ class CalculateOsagoForm extends Model
             'phoneRequired' => ['phone', 'required'],
             'phoneMatch' => ['phone', 'match', 'pattern' => '/^(\+7)\((\d{3})\)(\d{3})-(\d{2})-(\d{2})/', 'message' => 'Необходимо ввести корректный телефонный номер'],
 
-            //TODO: исправить ошибку->капча не может отправить ответ
-            //'captchaRequired' => ['captcha', ReCaptchaValidator2::class, 'uncheckedMessage' => 'Нужно подтвердить, что вы не робот'],
+            'captchaRequired' => ['captcha', ReCaptchaValidator2::class, 'uncheckedMessage' => 'Нужно подтвердить, что вы не робот'],
 
             'acceptBoolean' => ['accept', 'boolean'],
             'acceptCompare' => ['accept', 'compare', 'compareValue' => 1, 'message' => 'Подтвердите обработку персональных данных']

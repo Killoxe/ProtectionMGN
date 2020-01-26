@@ -34,3 +34,73 @@ html {
     text-transform: uppercase;
   }
 }
+
+ul {
+  margin: 0 0 0 20px;
+
+  li {
+    &:after {
+      left: -20px !important;
+      content: "";
+      position: absolute;
+      top: 4px;
+      width: 10px;
+      height: 10px;
+      background-color: #ffb942;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+header {
+  .navbar {
+    & > a {
+      color: black;
+      font-size: 17px;
+
+      &:not(:last-of-type) {
+        margin-right: 17px;
+      }
+
+      &:first-of-type {
+        margin-left: 12px;
+      }
+
+      &:after {
+        width: 0;
+        height: 0;
+        background: none;
+      }
+
+      &:hover {
+        color: #007bff !important;
+      }
+    }
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    padding-bottom: 15px;
+
+    a {
+      color: white !important;
+      font-size: 15px;
+
+      &:after {
+        width: 0;
+        height: 0;
+        background: none;
+      }
+
+      &:hover {
+        color: #007bff !important;
+      }
+    }
+  }
+
+  &.sticky > .container > .header__wrap > .header__burger > img {
+    transition: 500ms;
+    width: 0;
+  }
+}

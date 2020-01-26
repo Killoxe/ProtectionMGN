@@ -46,8 +46,9 @@ class CalculateOsagoFormPeopleListEdit extends ListEdit
         $this->itemActions = [
             [
                 'class' => ListEditItemActionDelete::class,
+                'textButton' => Html::tag('span', 'Удалить водителя'),
                 'options' => [
-                    'class' => 'btn btn-icon--small list-edit__btn-delete calculateosagoform-people-list-edit__btn-delete'
+                    'class' => 'btnn list-edit__btn-delete calculateosagoform-people-list-edit__btn-delete'
                 ],
                 'jsClassOptions' => [
                     'selector' => '.calculateosagoform-people-list-edit__btn-delete'

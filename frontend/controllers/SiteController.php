@@ -7,6 +7,7 @@ use frontend\services\mail\FeedbackSendingMailServiceFactory;
 use frontend\services\mail\CalculateOsagoSendingMailServiceFactory;
 use Yii;
 use yii\base\Module;
+use yii\filters\PageCache;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\Response;
@@ -32,6 +33,18 @@ class SiteController extends Controller
         parent::__construct($id, $module, $config);
         $this->feedbackSendingMailServiceFactory = $feedbackSendingMailServiceFactory;
         $this->calculateOsagoSendingMailServiceFactory = $calculateOsagoSendingMailServiceFactory;
+    }
+
+
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => PageCache::class,
+                'only' => ['index'],
+                'duration' => 60,
+            ],
+        ];
     }
 
 

@@ -12,6 +12,7 @@ const del = require('del');
 const rename = require('gulp-rename');
 const gulpIf = require('gulp-if');
 const minimist = require('minimist');
+const imagemin = require('gulp-imagemin');
 
 
 const knownOptions = {
@@ -51,7 +52,7 @@ const path = {
 gulp.task('frontend:js:build', function () {
     return gulp.src(path.src.js) //Найдем наш main файл
         .pipe(rigger()) //Прогоним через rigger
-        .pipe(sourcemaps.init()) //Инициализируем sourcemap
+        //.pipe(sourcemaps.init()) //Инициализируем sourcemap
         .pipe(uglify()) //Сожмем наш js
         .pipe(gulpIf(options.env === 'development', sourcemaps.write())) //Пропишем карты
         .pipe(rename({suffix: '.min'})) //добавим суффикс .min к выходному файлу
@@ -60,7 +61,7 @@ gulp.task('frontend:js:build', function () {
 
 gulp.task('frontend:css:build', function () {
     return gulp.src(path.src.scss) //Выберем наш main.scss
-        .pipe(sourcemaps.init()) //То же самое что и с js
+        //.pipe(sourcemaps.init()) //То же самое что и с js
         .pipe(sass()) //Скомпилируем
         .pipe(autoprefixer()) //Добавим вендорные префиксы
         .pipe(cleancss({
@@ -74,13 +75,13 @@ gulp.task('frontend:css:build', function () {
 
 gulp.task('frontend:image:build', function () {
     return gulp.src(path.src.img) //Выберем наши картинки
-        /*.pipe(imagemin({ //Сожмем их
+        .pipe(imagemin({ //Сожмем их
             progressive: true, //сжатие .jpg
             svgoPlugins: [{removeViewBox: false}], //сжатие .svg
             //use: [pngquant()],
             interlaced: true, //сжатие .gif
             optimizationLevel: 3 //степень сжатия от 0 до 7
-        }))*/
+        }))
         .pipe(gulp.dest(path.build.img)); //выгрузим в build
 });
 

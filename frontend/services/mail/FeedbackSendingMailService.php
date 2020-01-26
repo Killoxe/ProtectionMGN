@@ -30,7 +30,7 @@ class FeedbackSendingMailService extends BaseObject
         $data = $this->buildData($model);
 
         $message = Yii::$app->mailer->compose($this->view, ['data' => $data])
-            ->setTo($data['email'])
+            ->setTo(Yii::$app->params['mailer.senderFrom']/*$data['email']*/)
             ->setFrom(Yii::$app->params['mailer.senderFrom'])
             ->setSubject($this->subject);
 
