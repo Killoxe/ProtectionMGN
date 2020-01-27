@@ -124,3 +124,40 @@ header {
     margin: 15px auto 0 auto;
   }
 }
+
+.slider {
+    .swiper-button-next,
+    .swiper-button-prev {
+        outline: none;
+        transition: 300ms;
+
+        &:focus,
+        &:hover {
+            color: #ffb942;
+        }
+    }
+}
+
+.row {
+  border-bottom: 2px solid #0c1824;
+}
+.aboutUs {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .aboutUs__slider > .swiper-wrapper > .swiper-slide {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header__burger img,
+  .header__burger navbar {
+    display: none;
+  }
+}
+
+.modal-header {
+  padding: 15px;
+}

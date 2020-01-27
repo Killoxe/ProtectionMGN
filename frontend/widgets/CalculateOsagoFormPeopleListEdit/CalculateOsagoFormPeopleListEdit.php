@@ -37,7 +37,7 @@ class CalculateOsagoFormPeopleListEdit extends ListEdit
                 'class' => ListEditActionCreate::class,
                 'text' => Html::icon('add').'&nbsp;'.'Добавить водителя',
                 'options' => [
-                    'class' => 'list-edit__btn-create'
+                    'class' => 'list-edit__btn-create null'
                 ],
                 'jsClassName' => 'ListEditActionCreate'
             ]
