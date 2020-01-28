@@ -5,36 +5,6 @@ html {
   position: relative;
 }
 
-.btn {
-  position: relative;
-  border: 1px solid $btn-color;
-  padding: 11px 30px 9px;
-  width: fit-content;
-  cursor: pointer;
-  border-radius: 0px;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: $btn-color;
-    transition: 300ms;
-    z-index: -1;
-  }
-
-  &:hover {
-    &::after {
-      width: 0;
-    }
-  }
-  span {
-    text-transform: uppercase;
-  }
-}
-
 ul {
   margin: 0 0 0 20px;
 
@@ -85,7 +55,8 @@ header {
 
     a {
       color: white !important;
-      font-size: 15px;
+      font-size: 18px;
+      margin: 5px 0;
 
       &:after {
         width: 0;
@@ -119,9 +90,25 @@ header {
   padding: 20px;
   font-size: 20px;
   color: $primary-color;
+  justify-content: center;
+  flex-direction: column;
 
   & > .btnn {
     margin: 15px auto 0 auto;
+  }
+
+  $cookies-info-media: (
+    784px: 185px,
+    543px: 210px,
+    462px: 235px,
+    374px: 270px,
+    326px: 290px
+  );
+
+  @each $mediaWidth, $height in $cookies-info-media {
+    @media (max-width: $mediaWidth) {
+      height: $height;
+    }
   }
 }
 
@@ -153,11 +140,72 @@ header {
 
 @media (max-width: 1024px) {
   .header__burger img,
-  .header__burger navbar {
+  .header__burger .navbar {
     display: none;
   }
 }
 
 .modal-header {
   padding: 15px;
+}
+
+.btnn {
+  background: transparent;
+}
+
+.modal-header {
+  padding: 30px 30px 20px;
+}
+.modal-body {
+  padding: 0 30px 30px;
+}
+@media (max-width: 768px) {
+  .modal-header {
+    padding: 15px 15px 10px;
+  }
+  .modal-body {
+    padding: 0 15px 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .row.header__wrap {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  header .menu {
+    margin: 0 -5px;
+  }
+  header .menu > div {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .modal .modal-content > .modal-header.modal-car-header {
+    margin-bottom: 15px;
+  }
+  .modal .modal-content > .modal-header.modal-car-header > .modal-title {
+    left: 0;
+  }
+  .modal .modal-content > .modal-body.modal__card {
+    padding: 0 15px 15px 15px;
+  }
+  .modal .modal-content > .modal-body > .btn-in-modal {
+    margin: 20px auto 0 auto;
+  }
+}
+
+header .navbar > a {
+  transition: 300ms;
+}
+
+.modal .modal-content > .modal-header {
+  position: relative;
+}
+.modal .modal-content > .modal-header.modal-specialMachenry-header > .modal-title {
+  top: auto;
+  bottom: 0;
+  position: absolute;
 }

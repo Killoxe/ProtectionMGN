@@ -15,6 +15,12 @@ form {
     margin-left: 5px;
   }
 
+  @media (max-width: 768px) {
+    .label-need-to-fill {
+      margin-bottom: 10px;
+    }
+  }
+
   .form-group {
     input, textarea, .select2-selection {
       border: 2px solid $main-second-color;
@@ -71,23 +77,12 @@ form {
           border: 2px solid $main-second-color;
           background: $primary-color;
           border-radius: 3px;
-        }
-
-        &:after {
-          content: '';
-          position: absolute;
-          left: 5px;
-          width: 22px;
-          height: 22px;
-          background: $main-second-color;
-          opacity: 0;
           transition: .2s;
-          border-radius: 3px;
         }
       }
 
-      &:checked + label:after {
-        opacity: 1;
+      &:checked + label:before {
+        background: $main-second-color;
       }
     }
   }

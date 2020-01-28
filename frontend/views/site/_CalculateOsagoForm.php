@@ -26,7 +26,7 @@ use frontend\widgets\Button;
     'validationUrl' => ['site/calculate-osago-form-validation']
 ]) ?>
 
-    <?= Html::beginTag('div', ['style' => ['margin-bottom' => '15px']]); ?>
+    <?= Html::beginTag('div', ['class' => 'label-need-to-fill']); ?>
         Обязательное для заполнение поле
         <?= Html::tag('div', '', ['class' => 'required-icon']); ?>
     <?= Html::endTag('div'); ?>

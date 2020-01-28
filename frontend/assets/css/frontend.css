@@ -218,9 +218,6 @@ ul li::after {
     padding: 0 25px !important;
   }
 }
-.row:not(:last-child) {
-  border-bottom: 2px solid #0c1824;
-}
 .tb3in5 {
   display: grid !important;
   grid-template-areas: ". st st st .";
