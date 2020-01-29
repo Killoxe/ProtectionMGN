@@ -10,6 +10,7 @@
         & > .modal-header {
             border: none;
             border-radius: 0;
+            padding: 30px 30px 20px;
 
             @each $header, $nameImg in $modal-headers {
                 &.modal-#{$header}-header {
@@ -17,13 +18,14 @@
                     background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%), url(../css/images/#{$nameImg});
                     background-size: cover;
                     margin-bottom: 30px;
+                    display: flex;
+                    align-items: flex-end;
 
                     & > .modal-title {
-                        top: 120px;
-                        left: 20px;
+                        position: relative;
+                        bottom: -20px;
                         font-size: 30px;
                         color: #0c1824;
-                        position: relative;
                     }
                 }
             }
@@ -38,8 +40,14 @@
         }
 
         & > .modal-body {
+            padding: 0 30px 30px;
+
             &.modal__card {
                 padding: 0 30px 30px 30px;
+
+                @media (max-width: 768px) {
+                    padding: 0 15px 15px 15px;
+                }
             }
 
             font-size: 15px;
@@ -48,6 +56,10 @@
 
             & > .btn-in-modal {
                 margin: 40px auto 0 auto;
+
+                @media (max-width: 768px) {
+                    margin: 20px auto 0 auto;
+                }
             }
         }
     }

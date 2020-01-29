@@ -62,4 +62,15 @@ abstract class BaseModal extends Modal
     }
 
     abstract protected function renderBodyContent();
+
+    protected function initOptions ()
+    {
+        parent::initOptions();
+
+        if ($this->toggleButton !== false) {
+            if (isset($this->toggleButton['type'])) {
+                unset($this->toggleButton['type']);
+            }
+        }
+    }
 }

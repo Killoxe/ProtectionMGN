@@ -20,7 +20,7 @@ use yii\helpers\Url;
                             <h4></h4>
                         </div>
                         <!-- модалка расчета ОСАГО -->
-                        <a type="button" data-toggle="modal" data-target="#calculate-osago-modal">Расчет стоимости ОСАГО</a>
+                        <a data-toggle="modal" data-target="#calculate-osago-modal">Расчет стоимости ОСАГО</a>
                     </div>
                 </div>
                 <div class="slide__img">

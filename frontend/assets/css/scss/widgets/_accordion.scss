@@ -14,8 +14,10 @@
 
     & > .accordion__item--header {
       font-size: 24px;
-      padding: 12px 12px 9px 12px;
       cursor: pointer;
+      padding: 12px 36px 9px 12px;
+      word-wrap: break-word;
+      position: relative;
 
       &:after {
         content: '✕';
@@ -23,8 +25,8 @@
         transform: rotate(45deg);
         transition: 300ms;
         position: absolute;
-        right: 45px;
-        margin-top: -37px;
+        right: 14px;
+        top: 12px;
       }
     }
 
