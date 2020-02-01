@@ -718,7 +718,7 @@ ul li::after {
   transition: all 300ms;
   width: 100%;
 }
-.catalog__card:hover span {
+.catalog__card:hover > div > span {
   opacity: 1;
 }
 .catalog__card img {
@@ -740,7 +740,7 @@ ul li::after {
 .catalog__card h3 {
   margin-bottom: 15px;
 }
-.catalog__card span {
+.catalog__card > div > span {
   opacity: 0;
   max-height: 149px;
   overflow: hidden;

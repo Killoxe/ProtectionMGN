@@ -70,14 +70,20 @@ header {
     }
   }
 
-  &.sticky > .container > .header__wrap > .header__burger > img {
-    transition: 500ms;
-    width: 0;
+  &.sticky {
+    .navbar > a:hover {
+      color: #007bff!important;
+    }
+
+    & > .container > .header__wrap > .header__burger > img {
+      transition: 500ms;
+      width: 0;
+    }
   }
 }
 
 #cookies_info {
-  position: sticky;
+  position: fixed;
   height: 150px;
   width: 80%;
   bottom: 0;
@@ -92,6 +98,7 @@ header {
   color: $primary-color;
   justify-content: center;
   flex-direction: column;
+  margin: 0 10%;
 
   & > .btnn {
     margin: 15px auto 0 auto;
@@ -180,11 +187,12 @@ header {
   header .menu > div {
     margin-top: 10px;
   }
+
+  .slider .swiper-slide {
+    height: auto;
+  }
 }
 
 header .navbar > a {
   transition: 300ms;
 }
-
-.catalog__card:hover > div > span {}
-.catalog__card > div > span {}
