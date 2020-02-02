@@ -21,5 +21,6 @@ class AppAsset extends AssetBundle
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
         'yii\bootstrap\BootstrapPluginAsset',
+        'frontend\assets\IE8CompatibilityAsset'
     ];
 }

@@ -9,19 +9,23 @@
     "> 1%"
   ],
   "dependencies": {
+    "bower": "^1.8.8",
+    "del": "latest",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
     "gulp-clean-css": "latest",
+    "gulp-if": "latest",
+    "gulp-rename": "latest",
     "gulp-rigger": "latest",
     "gulp-sass": "latest",
     "gulp-sourcemaps": "latest",
     "gulp-uglify": "latest",
     "gulp-watch": "latest",
-    "del": "latest",
-    "gulp-rename": "latest",
-    "require-dir": "latest",
-    "gulp-if": "latest",
     "minimist": "latest",
-    "npm": "latest"
+    "npm": "latest",
+    "require-dir": "latest"
+  },
+  "devDependencies": {
+    "gulp-imagemin": "^7.1.0"
   }
 }

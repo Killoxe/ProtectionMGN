@@ -18,3 +18,4 @@
 //= _AccordionWidget.js
 //= _ModalFromModal.js
 //= _CookiesInfo.js
+//= _Lazyload.js
