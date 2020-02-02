@@ -143,6 +143,7 @@ class WeAreInRegion extends Widget
                     'position' => 'absolute'
                 ],
                 'allowfullscreen' => '',
+                'title' => 'Защита MGN в городах'
             ]).
         Html::endTag('div');
     }

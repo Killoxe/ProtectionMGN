@@ -38,14 +38,7 @@ AppAsset::register($this);
         <?= $content ?>
     </div>
     <?= $this->render('_footer') ?>
-    <a href="#slider" class="butUp hidden"></a>
-    <div id="cookies_info">
-        <span>Используя наш сайт вы даете нам согласие на использование файлов cookie на вашем устройстве.</span>
-        <div class="btnn"><span>Согласен</span></div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <?= $this->render('_fixedBlocks') ?>
 
 <?php $this->endBody() ?>
 </body>

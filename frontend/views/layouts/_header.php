@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Url;
+use frontend\components\helpers\Html;
 ?>
 
 <header class="header container-fluid">
@@ -11,7 +12,12 @@ use yii\helpers\Url;
                     <div></div>
                     <div></div>
                 </div>
-                <img src="<?= Url::to('css/images/logo.svg', true) ?>" alt="">
+                <?= Html::tag('img', null, [
+                    'class' => 'lazyload',
+                    'data' => [
+                        'src' => Url::to('css/images/logo.svg', true)
+                    ],
+                ]) ?>
                 <div class="navbar">
                     <a href="#slider">Главная</a>
                     <a href="#catalog">Виды страхования</a>
@@ -20,8 +26,20 @@ use yii\helpers\Url;
                 </div>
             </div>
             <div class="header__contacts">
-                <img src="<?= Url::to('css/images/phone-call.svg', true) ?>" alt=""><a href="tel:89090950666">8 (909) 095-06-66</a>
-                <img src="<?= Url::to('css/images/envelope.svg', true) ?>" alt=""><a href="mailto:89090950666@bk.ru">89090950666@bk.ru</a>
+                <?= Html::tag('img', null, [
+                    'class' => 'lazyload',
+                    'data' => [
+                        'src' => Url::to('css/images/phone-call.svg', true)
+                    ],
+                ]) ?>
+                <a href="tel:89090950666">8 (909) 095-06-66</a>
+                <?= Html::tag('img', null, [
+                    'class' => 'lazyload',
+                    'data' => [
+                        'src' => Url::to('css/images/envelope.svg', true)
+                    ],
+                ]) ?>
+                <a href="mailto:89090950666@bk.ru">89090950666@bk.ru</a>
             </div>
         </div>
         <div class="menu">

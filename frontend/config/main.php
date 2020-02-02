@@ -72,15 +72,14 @@ return [
                 \yii\bootstrap\BootstrapAsset::class => [
                     'basePath' => '@webroot',
                     'baseUrl' => '@web',
-                    //'css' => ['css/lib.min.css'],
-                    'css' => []
-                ],
-                \yii\bootstrap4\BootstrapAsset::class => [
-                    'basePath' => '@webroot',
-                    'baseUrl' => '@web',
                     'css' => ['css/lib.min.css'],
                 ],
                 \yii\bootstrap\BootstrapPluginAsset::class => [
+                    'basePath' => '@webroot',
+                    'baseUrl' => '@web',
+                    'js' => ['js/lib.min.js'],
+                ],
+                \yii\widgets\PjaxAsset::class => [
                     'basePath' => '@webroot',
                     'baseUrl' => '@web',
                     'js' => ['js/lib.min.js'],
@@ -90,11 +89,21 @@ return [
                     'baseUrl' => '@web',
                     'js' => ['js/lib.min.js'],
                 ],
-                yii\widgets\ActiveFormAsset::class => [
+                \yii\widgets\ActiveFormAsset::class => [
                     'basePath' => '@webroot',
                     'baseUrl' => '@web',
                     'js' => ['js/lib.min.js'],
                 ],
+                \yii\bootstrap4\BootstrapAsset::class => [
+                    'basePath' => '@webroot',
+                    'baseUrl' => '@web',
+                    'css' => ['css/lib.min.css'],
+                ],
+                \yii\bootstrap4\BootstrapPluginAsset::class => [
+                    'basePath' => '@webroot',
+                    'baseUrl' => '@web',
+                    'js' => ['js/lib.min.js'],
+                ]
             ],
         ],
     ],

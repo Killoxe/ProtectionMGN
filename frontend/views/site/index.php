@@ -2,10 +2,13 @@
 
 use yii\bootstrap4\Modal;
 use yii\helpers\Url;
+use frontend\components\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $feedbackFormModel frontend\models\forms\FeedbackForm */
 /* @var $calculateOsagoFormModel frontend\models\forms\CalculateOsagoForm */
+
+$this->title = 'Страховое Агенство "Защита MGN"';
 ?>
 
 <div class="row slider tb3in5">
@@ -24,7 +27,12 @@ use yii\helpers\Url;
                     </div>
                 </div>
                 <div class="slide__img">
-                    <img src="<?= Url::to('css/images/Картинкадлябанера.png', true) ?>" alt="">
+                    <?= Html::tag('img', null, [
+                        'class' => 'lazyload',
+                        'data' => [
+                            'src' => Url::to('css/images/Картинкадлябанера.png', true)
+                        ],
+                    ]) ?>
                 </div>
             </div>
             <div class="swiper-slide">
@@ -39,7 +47,12 @@ use yii\helpers\Url;
                     </div>
                 </div>
                 <div class="slide__img">
-                    <img src="<?= Url::to('css/images/Картинкадлябанера.png', true) ?>" alt="">
+                    <?= Html::tag('img', null, [
+                        'class' => 'lazyload',
+                        'data' => [
+                            'src' => Url::to('css/images/Картинкадлябанера.png', true)
+                        ],
+                    ]) ?>
                 </div>
             </div>
             <div class="swiper-slide">
@@ -54,7 +67,12 @@ use yii\helpers\Url;
                     </div>
                 </div>
                 <div class="slide__img">
-                    <img src="<?= Url::to('css/images/IMG_1663.jpg', true) ?>" alt="">
+                    <?= Html::tag('img', null, [
+                        'class' => 'lazyload',
+                        'data' => [
+                            'src' => Url::to('css/images/IMG_1663.jpg', true)
+                        ],
+                    ]) ?>
                 </div>
             </div>
         </div>
@@ -68,7 +86,12 @@ use yii\helpers\Url;
     <div class="h2 h2--first">Для физических лиц</div>
     <div class="catalog__cards catalog__cards--first tb5in5">
         <div class="catalog__card">
-            <img src="<?= Url::to('css/images/car.png', true) ?>" alt="">
+            <?= Html::tag('img', null, [
+                'class' => 'lazyload',
+                'data' => [
+                    'src' => Url::to('css/images/car.png', true)
+                ],
+            ]) ?>
             <div>
                 <h3>Автомобили</h3>
                 <span>КАСКО, ОСАГО.</span>
@@ -76,7 +99,12 @@ use yii\helpers\Url;
             </div>
         </div>
         <div class="catalog__card">
-            <img src="<?= Url::to('css/images/home.png', true) ?>" alt="">
+            <?= Html::tag('img', null, [
+                'class' => 'lazyload',
+                'data' => [
+                    'src' => Url::to('css/images/home.png', true)
+                ],
+            ]) ?>
             <div>
                 <h3>Жилье</h3>
                 <span>Квартира, дом, ипотека, гражданская ответсвенность.</span>
@@ -84,7 +112,12 @@ use yii\helpers\Url;
             </div>
         </div>
         <div class="catalog__card">
-            <img src="<?= Url::to('css/images/treval.png', true) ?>" alt="">
+            <?= Html::tag('img', null, [
+                'class' => 'lazyload',
+                'data' => [
+                    'src' => Url::to('css/images/treval.png', true)
+                ],
+            ]) ?>
             <div>
                 <h3>Путешествия</h3>
                 <span>ВЗР, страхование от не выезда.</span>
@@ -92,7 +125,12 @@ use yii\helpers\Url;
             </div>
         </div>
         <div class="catalog__card">
-            <img src="<?= Url::to('css/images/Rectangle48.png', true) ?>" alt="">
+            <?= Html::tag('img', null, [
+                'class' => 'lazyload',
+                'data' => [
+                    'src' => Url::to('css/images/Rectangle48.png', true)
+                ],
+            ]) ?>
             <div>
                 <h3>Здоровье</h3>
                 <span>Клещ, н/с, ДМС.</span>
@@ -100,7 +138,12 @@ use yii\helpers\Url;
             </div>
         </div>
         <div class="catalog__card">
-            <img src="<?= Url::to('css/images/Rectangle47.png', true) ?>" alt="">
+            <?= Html::tag('img', null, [
+                'class' => 'lazyload',
+                'data' => [
+                    'src' => Url::to('css/images/Rectangle47.png', true)
+                ],
+            ]) ?>
             <div>
                 <h3>Туры</h3>
                 <span>За границу и по России.</span>
@@ -111,7 +154,12 @@ use yii\helpers\Url;
     <div class="h2 h2--last">Для юридических лиц</div>
     <div class="catalog__cards catalog__cards--last tb5in5">
         <div class="catalog__card">
-            <img src="<?= Url::to('css/images/Rectangle49.png', true) ?>" alt="">
+            <?= Html::tag('img', null, [
+                'class' => 'lazyload',
+                'data' => [
+                    'src' => Url::to('css/images/Rectangle49.png', true)
+                ],
+            ]) ?>
             <div>
                 <h3>Грузы</h3>
                 <span>Авто, ЖД, судоходные.</span>
@@ -119,7 +167,12 @@ use yii\helpers\Url;
             </div>
         </div>
         <div class="catalog__card">
-            <img src="<?= Url::to('css/images/Rectangle50.png', true) ?>" alt="">
+            <?= Html::tag('img', null, [
+                'class' => 'lazyload',
+                'data' => [
+                    'src' => Url::to('css/images/Rectangle50.png', true)
+                ],
+            ]) ?>
             <div>
                 <h3>Имущество юр. лиц, авто и спец техника</h3>
                 <span>Здания, оборудование, офис, офисная техника, продукты, товары, сырье.</span>
@@ -127,7 +180,12 @@ use yii\helpers\Url;
             </div>
         </div>
         <div class="catalog__card">
-            <img src="<?= Url::to('css/images/Rectangle44.png', true) ?>" alt="">
+            <?= Html::tag('img', null, [
+                'class' => 'lazyload',
+                'data' => [
+                    'src' => Url::to('css/images/Rectangle44.png', true)
+                ],
+            ]) ?>
             <div>
                 <h3>ОПО</h3>
                 <span>Автозаправочные станции, лифты, эскалаторы.</span>
@@ -135,7 +193,12 @@ use yii\helpers\Url;
             </div>
         </div>
         <div class="catalog__card">
-            <img src="<?= Url::to('css/images/handshake.png', true) ?>" alt="">
+            <?= Html::tag('img', null, [
+                'class' => 'lazyload',
+                'data' => [
+                    'src' => Url::to('css/images/handshake.png', true)
+                ],
+            ]) ?>
             <div>
                 <h3>ГО</h3>
                 <span>Гражданская ответсвенность собственников нежилых помещений, организаторов массовых мероприятий, ГО собственника автостоянки, ГО владельцев складов временного хранения.</span>
@@ -143,7 +206,12 @@ use yii\helpers\Url;
             </div>
         </div>
         <div class="catalog__card">
-            <img src="<?= Url::to('css/images/Rectangle23.png', true) ?>" alt="">
+            <?= Html::tag('img', null, [
+                'class' => 'lazyload',
+                'data' => [
+                    'src' => Url::to('css/images/Rectangle23.png', true)
+                ],
+            ]) ?>
             <div>
                 <h3>Н/С и ДМС</h3>
                 <span>Коллективное страхование сотрудников предприятия от несчастного случая и болезней, страхование руководителей предприятий от несчастного случая и болезней, добровольное мед страхование в организациях.</span>

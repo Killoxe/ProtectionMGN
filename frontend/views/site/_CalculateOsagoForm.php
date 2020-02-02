@@ -56,6 +56,7 @@ use frontend\widgets\Button;
         ->widget(DatePicker::class, [
             'options' => [
                 'placeholder' => 'Выберите дату',
+                'autocomplete' => 'off'
             ]
         ]) ?>
 
