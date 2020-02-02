@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+# phpstorm project files
+.idea
+=======
 # yii console commands
 /yii
 /yii_test
@@ -41,3 +45,4 @@ phpunit.phar
 /frontend/web/index.php
 /frontend/web/index-test.php
 /frontend/web/robots.txt
+>>>>>>> fca894e966650935c6514693a8f1026f8d5ace18
