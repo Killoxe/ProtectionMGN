@@ -1,0 +1,138 @@
+$app-icons-font-family: "AppIconsFont" !default;
+$app-icons-font-path: "../fonts" !default;
+
+$app-icon-restore_from_trash: "\e90c";
+$app-icon-profile: "\e90b";
+$app-icon-eye: "\e900";
+$app-icon-email: "\e901";
+$app-icon-more_vert: "\e902";
+$app-icon-edit: "\e905";
+$app-icon-arrow_upward: "\e903";
+$app-icon-arrow_downward: "\e904";
+$app-icon-clear: "\e906";
+$app-icon-keyboard_arrow_right: "\e909";
+$app-icon-keyboard_arrow_left: "\e90a";
+$app-icon-expand_less: "\e907";
+$app-icon-expand_more: "\e908";
+$app-icon-add: "\e90f";
+
+@font-face {
+  font-family: '#{$app-icons-font-family}';
+  src: url('#{$app-icons-font-path}/#{$app-icons-font-family}.eot?5qvx7t');
+  src: url('#{$app-icons-font-path}/#{$app-icons-font-family}.eot?5qvx7t#iefix') format('embedded-opentype'),
+    url('#{$app-icons-font-path}/#{$app-icons-font-family}.ttf?5qvx7t') format('truetype'),
+    url('#{$app-icons-font-path}/#{$app-icons-font-family}.woff?5qvx7t') format('woff'),
+    url('#{$app-icons-font-path}/#{$app-icons-font-family}.svg?5qvx7t##{$app-icons-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin app-icon() {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$app-icons-font-family}' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  font-size: 24px;
+  text-transform: none;
+  line-height: 1;
+
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  text-rendering: optimizeLegibility;
+
+  display: inline-block;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  position: relative;
+  vertical-align: top;
+}
+
+.app-icon {
+  @include app-icon();
+}
+
+.app-icon-restore_from_trash {
+  &:before {
+    content: $app-icon-restore_from_trash;
+  }
+}
+.app-icon-profile {
+  &:before {
+    content: $app-icon-profile;
+  }
+}
+.app-icon-eye {
+  &:before {
+    content: $app-icon-eye;
+  }
+}
+.app-icon-email {
+  &:before {
+    content: $app-icon-email;
+  }
+}
+.app-icon-more_vert {
+  &:before {
+    content: $app-icon-more_vert;
+  }
+}
+.app-icon-edit {
+  &:before {
+    content: $app-icon-edit;
+  }
+}
+.app-icon-arrow_upward {
+  &:before {
+    content: $app-icon-arrow_upward;
+  }
+}
+.app-icon-arrow_downward {
+  &:before {
+    content: $app-icon-arrow_downward;
+  }
+}
+.app-icon-clear {
+  &:before {
+    content: $app-icon-clear;
+  }
+}
+.app-icon-keyboard_arrow_right {
+  &:before {
+    content: $app-icon-keyboard_arrow_right;
+  }
+}
+.app-icon-keyboard_arrow_left {
+  &:before {
+    content: $app-icon-keyboard_arrow_left;
+  }
+}
+.app-icon-expand_less {
+  &:before {
+    content: $app-icon-expand_less;
+  }
+}
+.app-icon-expand_more {
+  &:before {
+    content: $app-icon-expand_more;
+  }
+}
+.app-icon-add {
+  &:before {
+    content: $app-icon-add;
+  }
+}
